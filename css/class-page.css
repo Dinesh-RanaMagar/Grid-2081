@@ -398,6 +398,8 @@ body {
 .card-body { flex:1 1 auto; min-width:0; }
 .card-title { font-size:1rem; font-weight:800; color:var(--text); margin-bottom:6px; }
 .card-meta { display:flex; gap:10px; align-items:center; color:var(--muted); font-weight:600; font-size:0.9rem; }
+.card-address { display:flex; flex-direction:column; gap:4px; min-width:0; }
+.address-value { color:var(--text); font-weight:700; white-space:normal; overflow-wrap:anywhere; word-break:break-word; }
 .card-row { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:8px; }
 .card-phones { display:flex; gap:8px; align-items:center; }
 .card-phones .phone-item { display:flex; flex-direction:column; gap:4px; }
