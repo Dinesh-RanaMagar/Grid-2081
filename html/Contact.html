@@ -79,7 +79,7 @@
 
   <section class="page-hero">
     <h1 class="page-hero__title">Contact Us</h1>
-    <p class="page-hero__sub">Get contact information for teachers and students</p>
+    <p class="page-hero__sub">Teachers see student numbers only. Admins can switch between student and teacher contacts.</p>
  
   </section>
 
@@ -110,6 +110,10 @@
 
       <section class="controls-row">
         <div class="left-controls">
+          <div class="section-tabs" id="sectionTabs" role="tablist" aria-label="Contact sections">
+            <button class="section-tab active" type="button" data-section="students">Students</button>
+            <button class="section-tab" type="button" data-section="teachers">Teachers</button>
+          </div>
           <div class="search-box modern">
             <i class="fas fa-search"></i>
             <input id="searchInput" type="search" placeholder="Search name, class, phone..." aria-label="Search">
@@ -119,9 +123,12 @@
           </select>
         </div>
         <div class="right-controls">
-          <div class="badge-wrap">
-            <span class="badge" id="resultCount">0</span>
-            <span class="badge-label">Students</span>
+          <div class="result-summary" aria-live="polite" aria-atomic="true">
+            <span class="result-summary__icon"><i class="fas fa-layer-group"></i></span>
+            <div class="result-summary__text">
+              <span class="result-summary__count" id="resultCount">25</span>
+              <span class="badge-label">Contacts</span>
+            </div>
           </div>
           <button class="logout-btn" id="logoutBtn" type="button"><i class="fas fa-sign-out-alt"></i> Logout</button>
         </div>
@@ -135,7 +142,46 @@
           </div>
         </div>
 
-        <div class="directory-grid" id="directoryGrid" aria-live="polite"></div>
+        <div class="directory-grid" id="directoryGrid" aria-live="polite">
+          <table class="contact-table" style="width:100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background:#f3f4f6; text-align:left;">
+                <th style="padding:8px; border:1px solid #e5e7eb; width:6%">S.N</th>
+                <th style="padding:8px; border:1px solid #e5e7eb;">Full Name</th>
+                <th style="padding:8px; border:1px solid #e5e7eb; width:8%">Class</th>
+                <th style="padding:8px; border:1px solid #e5e7eb;">Address</th>
+                <th style="padding:8px; border:1px solid #e5e7eb; width:14%">Ph. Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">1</td><td style="padding:8px; border:1px solid #e5e7eb;">Amir Bishwokarma</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-10</td><td style="padding:8px; border:1px solid #e5e7eb;">9811954067</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">2</td><td style="padding:8px; border:1px solid #e5e7eb;">Amrit Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821957790</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">3</td><td style="padding:8px; border:1px solid #e5e7eb;">Bhumika Sunari Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9876435611</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">4</td><td style="padding:8px; border:1px solid #e5e7eb;">Bijaya Kafle</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9815439495</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Bipsana Thapa</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9841413062</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">6</td><td style="padding:8px; border:1px solid #e5e7eb;">Ghanishta Sunar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9804436745</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">7</td><td style="padding:8px; border:1px solid #e5e7eb;">Kushal Ranabhat</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9825762299</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">8</td><td style="padding:8px; border:1px solid #e5e7eb;">Manisha Tumsing</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9768375112</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">9</td><td style="padding:8px; border:1px solid #e5e7eb;">Mausam Maski Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9743480615</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">10</td><td style="padding:8px; border:1px solid #e5e7eb;">Nikesh Kanhug Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821059262</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">11</td><td style="padding:8px; border:1px solid #e5e7eb;">Parbati Kumal</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821440979</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">12</td><td style="padding:8px; border:1px solid #e5e7eb;">Prakash Sapkota</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9867836951</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">13</td><td style="padding:8px; border:1px solid #e5e7eb;">Prayas Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9860299147</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">14</td><td style="padding:8px; border:1px solid #e5e7eb;">Puja Thapa Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9811556213</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">15</td><td style="padding:8px; border:1px solid #e5e7eb;">Sabin B.K</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9764537090</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">16</td><td style="padding:8px; border:1px solid #e5e7eb;">Samjhana Gharti Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9704208541</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">17</td><td style="padding:8px; border:1px solid #e5e7eb;">Smile Nepali</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9867111056</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">18</td><td style="padding:8px; border:1px solid #e5e7eb;">Soniya Sherstha</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9805108943</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">19</td><td style="padding:8px; border:1px solid #e5e7eb;">Sophia Sunar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9805455751</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">20</td><td style="padding:8px; border:1px solid #e5e7eb;">Subin Tamang</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9825493490</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">21</td><td style="padding:8px; border:1px solid #e5e7eb;">Sulav B.K</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9855055505</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">22</td><td style="padding:8px; border:1px solid #e5e7eb;">Sushila Ranabhat</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9867043303</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">23</td><td style="padding:8px; border:1px solid #e5e7eb;">Sushma Tamang</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9806549440</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">24</td><td style="padding:8px; border:1px solid #e5e7eb;">Umanga Thada</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9825483438</td></tr>
+              <tr><td style="padding:8px; border:1px solid #e5e7eb;">25</td><td style="padding:8px; border:1px solid #e5e7eb;">Unisha Bk</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9708570683</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="empty-state empty-modern hidden" id="emptyState">
           <div class="empty-emoji">🔎</div>

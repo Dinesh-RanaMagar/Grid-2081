@@ -1,48 +1,64 @@
-                                                                                                                                                                                                                                                                                                                                                                                                          const students = [
-  {
-    name: "Ram Sharma",
-    class: "10",
-    studentPhone: "9811111111",
-    parentPhone: "9822222222"
-  },
-  {
-    name: "Sita Thapa",
-    class: "9",
-    studentPhone: "9841234567",
-    parentPhone: "9859876543"
-  },
-  {
-    name: "Bikash Gurung",
-    class: "8",
-    studentPhone: "9861122334",
-    parentPhone: "9804455667"
-  },                                                                                                                                             
-  {
-    name: "Anita Magar",
-    class: "7",
-    studentPhone: "9823344556",
-    parentPhone: "9817766554"
-  },
-  {
-    name: "Nabin Chaudhary",
-    class: "6",
-    studentPhone: "9801234567",
-    parentPhone: "9847654321"
-  },
-  {
-    name: "Puja Bhandari",
-    class: "5",
-    studentPhone: "9867788990",
-    parentPhone: "9812233445"
-  }
+
+const students = [
+  { name: "Amir Bishwokarma", class: "5", address: "Devchuli-10", studentPhone: "9811954067" },
+  { name: "Amrit Gurung", class: "5", address: "Devchuli-14", studentPhone: "9821957790" },
+  { name: "Bhumika Sunari Magar", class: "5", address: "Devchuli-14", studentPhone: "9876435611" }, // Corrected to 10 digits
+  { name: "Bijaya Kafle", class: "5", address: "Devchuli-11", studentPhone: "9815439495" },
+  { name: "Bipsana Thapa", class: "5", address: "Devchuli-11", studentPhone: "9841413062" },
+  { name: "Ghanishta Sunar", class: "5", address: "Devchuli-14", studentPhone: "9804436745" },
+  { name: "Kushal Ranabhat", class: "5", address: "Devchuli-14", studentPhone: "9825762299" },
+  { name: "Manisha Tumsing", class: "5", address: "Devchuli-11", studentPhone: "9768375112" },
+  { name: "Mausam Maski Magar", class: "5", address: "Devchuli-14", studentPhone: "9743480615" },
+  { name: "Nikesh Kanhug Magar", class: "5", address: "Devchuli-14", studentPhone: "9821059262" },
+  { name: "Parbati Kumal", class: "5", address: "Devchuli-14", studentPhone: "9821440979" },
+  { name: "Prakash Sapkota", class: "5", address: "Devchuli-13", studentPhone: "9867836951" },
+  { name: "Prayas Gurung", class: "5", address: "Devchuli-13", studentPhone: "9860299147" },
+  { name: "Puja Thapa Magar", class: "5", address: "Devchuli-14", studentPhone: "9811556213" },
+  { name: "Sabin B.K", class: "5", address: "Devchuli-14", studentPhone: "9764537090" },
+  { name: "Samjhana Gharti Magar", class: "5", address: "Devchuli-14", studentPhone: "9704208541" },
+  { name: "Smile Nepali", class: "5", address: "Devchuli-14", studentPhone: "9867111056" },
+  { name: "Soniya Sherstha", class: "5", address: "Devchuli-11", studentPhone: "9805108943" },
+  { name: "Sophia Sunar", class: "5", address: "Devchuli-11", studentPhone: "9805455751" },
+  { name: "Subin Tamang", class: "5", address: "Devchuli-11", studentPhone: "9825493490" },
+  { name: "Sulav B.K", class: "5", address: "Devchuli-13", studentPhone: "9855055505" },
+  { name: "Sushila Ranabhat", class: "5", address: "Devchuli-14", studentPhone: "9867043303" },
+  { name: "Sushma Tamang", class: "5", address: "Devchuli-14", studentPhone: "9806549440" },
+  { name: "Umanga Thada", class: "5", address: "Devchuli-11", studentPhone: "9825483438" },
+  { name: "Unisha Bk", class: "5", address: "Devchuli-14", studentPhone: "9708570683" },
+  { name: "Aashika Gurung", class: "Class-7'B'", address: "Devchuli-", studentPhone: "" },
+  { name: "Anil B.K.", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9811545787" },
+  { name: "Anjal Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "078575011" },
+  { name: "Bipin Gurung", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9864406592" },
+  { name: "Debika Tamang", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9764356088" },
+  { name: "Dipesh Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9805405953" },
+  { name: "Drishti Saru Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9804471829" },
+  { name: "Karuna Pulami Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9845409030" },
+  { name: "Laxmi Sunar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9821577337" },
+  { name: "Mandip Chitaure", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9804408140" },
+  { name: "Mira Praja", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9847059417" },
+  { name: "Motisara Ale Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9815474945" },
+  { name: "Nabin Sunar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "" },
+  { name: "Om B.K.", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9843704270" },
+  { name: "Prijina Mugmi", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9826442118" },
+  { name: "Prisma Ale Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9821004161" },
+  { name: "Pujaniya Ale Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9816284410" },
+  { name: "Richa Pariyar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "" },
+  { name: "Romi B.K.", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9806150829" },
+  { name: "Sabina Saru Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9811931965" },
+  { name: "Sachina Bishwokarma", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9826414702" },
+  { name: "Sanjila Chitaure Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "078575011" },
+  { name: "Sapana Thapa", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9806511344" },
+  { name: "Shishir Thapa Magar", class: "Class-7'B'", address: "Devchuli-", studentPhone: "9821992664" }
 ];
+
 
 const teachers = [
   {
     name: "Dinesh Rana Magar",
     subject: "Math",
     phone: "9814462637",
-    password: "admin123"
+    password: "admin123",
+    role: "admin"
   },
   {
     name: "Hari Prasad Sharma",
@@ -76,6 +92,7 @@ const allowedUserCount = allowedUsers.length;
 
 const authKey = "grid2081-contact-auth";
 const teacherNameKey = "grid2081-contact-teacher-name";
+const roleKey = "grid2081-contact-role";
 let activeSection = "students";
 let searchTerm = "";
 
@@ -95,7 +112,9 @@ const activeEyebrow = document.getElementById("activeEyebrow");
 const toast = document.getElementById("toast");
 const classFilter = document.getElementById("classFilter");
 const teacherGreeting = document.getElementById("teacherGreeting");
+const sectionTabs = document.getElementById("sectionTabs");
 let activeClassFilter = "";
+let currentUserRole = localStorage.getItem(roleKey) || "teacher";
 
 function showLoader() {
   // Loader removed from new design
@@ -121,16 +140,32 @@ function showDashboard() {
   if (loginView && loginView.classList) loginView.classList.add("hidden");
   if (dashboardView && dashboardView.classList) {
     dashboardView.classList.remove("hidden");
+    dashboardView.classList.toggle("teacher-mode", currentUserRole !== "admin");
+    applyRolePermissions();
     updateTeacherGreeting();
     populateClassFilter();
     renderDirectory();
   }
 }
 
+function applyRolePermissions() {
+  const isAdmin = currentUserRole === "admin";
+  if (dashboardView && dashboardView.classList) {
+    dashboardView.classList.toggle("teacher-mode", !isAdmin);
+  }
+  if (sectionTabs) {
+    sectionTabs.classList.toggle("hidden", !isAdmin);
+  }
+  if (!isAdmin) {
+    activeSection = "students";
+  }
+}
+
 function updateTeacherGreeting() {
   if (!teacherGreeting) return;
   const teacherName = localStorage.getItem(teacherNameKey);
-  teacherGreeting.textContent = teacherName ? `Hi, ${teacherName}` : "Hi, Teacher";
+  const roleLabel = currentUserRole === "admin" ? "Admin" : "Teacher";
+  teacherGreeting.textContent = teacherName ? `Hi, ${teacherName} (${roleLabel})` : `Hi, ${roleLabel}`;
 }
 
 function setMessage(message, type = "error") {
@@ -164,6 +199,8 @@ function handleLogin(event) {
   setMessage("Login successful. Loading dashboard...", "success");
   localStorage.setItem(authKey, "true");
   localStorage.setItem(teacherNameKey, validTeacher.name);
+  currentUserRole = validTeacher.role || "teacher";
+  localStorage.setItem(roleKey, currentUserRole);
   setTimeout(() => {
     showDashboard();
     loginForm.reset();
@@ -173,6 +210,12 @@ function handleLogin(event) {
 function handleLogout() {
   localStorage.removeItem(authKey);
   localStorage.removeItem(teacherNameKey);
+  localStorage.removeItem(roleKey);
+  currentUserRole = "teacher";
+  activeSection = "students";
+  if (dashboardView && dashboardView.classList) {
+    dashboardView.classList.remove("teacher-mode");
+  }
   setTimeout(() => {
     showLogin();
   }, 350);
@@ -194,19 +237,20 @@ function createPhoneActions(phone, label) {
 }
 
 function studentCard(student) {
-  const initials = student.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
+  const initials = student.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
   return `
     <article class="contact-card" data-name="${student.name}">
       <div class="avatar" aria-hidden="true">${initials}</div>
       <div class="card-body">
         <div class="card-title">${student.name}</div>
         <div class="card-meta">Class <strong>${student.class}</strong></div>
+        <div class="card-address"><small class="muted">Address</small><div class="address-value">${student.address}</div></div>
         <div class="card-row">
           <div class="card-phones">
-            <div class="phone-item"><small class="muted">Parent</small><div class="phone-value">${student.parentPhone}</div></div>
+            <div class="phone-item"><small class="muted">Student</small><div class="phone-value">${student.studentPhone}</div></div>
           </div>
           <div class="card-actions">
-            ${createPhoneActions(student.parentPhone, `${student.name} parent`)}
+            ${createPhoneActions(student.studentPhone, `${student.name} student`)}
           </div>
         </div>
       </div>
@@ -215,7 +259,7 @@ function studentCard(student) {
 }
 
 function teacherCard(teacher) {
-  const initials = teacher.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
+  const initials = teacher.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
   return `
     <article class="contact-card" data-name="${teacher.name}">
       <div class="avatar" aria-hidden="true">${initials}</div>
@@ -236,28 +280,35 @@ function teacherCard(teacher) {
 }
 
 function renderDirectory() {
-  const source = activeSection === "students" ? students : teachers;
+  const isAdmin = currentUserRole === "admin";
+  const section = isAdmin ? activeSection : "students";
+  const source = section === "students" ? students : teachers;
+  const badgeLabel = section === "students" ? "Students" : "Teachers";
   const filtered = source.filter(item => {
     // text search match
     if (!matchesSearch(item)) return false;
     // class filter (only for students)
-    if (activeSection === 'students' && activeClassFilter) {
+    if (section === 'students' && activeClassFilter) {
       return item.class === activeClassFilter;
     }
     return true;
   });
-  const title = activeSection === "students" ? "Students" : "Teachers";
-  const eyebrow = activeSection === "students" ? "Student List" : "Teacher List";
+  const title = section === "students" ? "Students" : "Teachers";
+  const eyebrow = section === "students" ? "Student List" : "Teacher List";
 
   sectionTitle.textContent = title;
   activeEyebrow.textContent = eyebrow;
   resultCount.textContent = `${filtered.length} result${filtered.length === 1 ? "" : "s"}`;
-  directoryGrid.innerHTML = filtered.map(item => activeSection === "students" ? studentCard(item) : teacherCard(item)).join("");
+  const badgeLabelElement = document.querySelector(".badge-label");
+  if (badgeLabelElement) {
+    badgeLabelElement.textContent = badgeLabel;
+  }
+  directoryGrid.innerHTML = filtered.map(item => section === "students" ? studentCard(item) : teacherCard(item)).join("");
   emptyState.classList.toggle("hidden", filtered.length !== 0);
   directoryGrid.classList.toggle("hidden", filtered.length === 0);
   // show/hide class filter depending on active section
   if (classFilter) {
-    classFilter.style.display = activeSection === 'students' ? '' : 'none';
+    classFilter.style.display = section === 'students' ? '' : 'none';
   }
 }
 
@@ -269,6 +320,11 @@ function populateClassFilter() {
 }
 
 function setActiveSection(section) {
+  if (currentUserRole !== "admin") {
+    activeSection = "students";
+    renderDirectory();
+    return;
+  }
   activeSection = section;
   document.querySelectorAll("[data-section]").forEach(button => {
     button.classList.toggle("active", button.dataset.section === section);
@@ -327,14 +383,14 @@ function toggleSection(sectionId) {
   const sectionContent = document.getElementById(sectionId);
   if (sectionContent) {
     const section = sectionContent.parentElement;
-    
+
     // Close all other sections first (accordion behavior)
     document.querySelectorAll('.menu-section').forEach(otherSection => {
       if (otherSection !== section) {
         otherSection.classList.remove('expanded');
       }
     });
-    
+
     // Toggle current section
     section.classList.toggle('expanded');
   }
@@ -408,6 +464,7 @@ if (isLoggedIn()) {
   document.getElementById('loadingOverlay')?.classList.remove('hidden');
   setTimeout(() => {
     document.getElementById('loadingOverlay')?.classList.add('hidden');
+    currentUserRole = localStorage.getItem(roleKey) || "teacher";
     showDashboard();
   }, 450);
 } else {
