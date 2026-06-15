@@ -108,15 +108,24 @@
     <main class="dashboard-container">
       <section class="teacher-greeting" id="teacherGreeting" aria-live="polite"></section>
 
+      <section class="search-toolbar" aria-label="Student search">
+        <div class="search-box modern search-box--dashboard">
+          <div class="search-box__field">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input id="searchInput" type="search" placeholder="Search students by name, class, or ID" aria-label="Search students by name, class, or ID" autocomplete="off" spellcheck="false">
+            <button class="search-clear" id="searchClearBtn" type="button" aria-label="Clear search" hidden>
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="search-hint" id="searchHint" aria-live="polite">Search students by name, class, or ID.</div>
+        </div>
+      </section>
+
       <section class="controls-row">
         <div class="left-controls">
           <div class="section-tabs" id="sectionTabs" role="tablist" aria-label="Contact sections">
             <button class="section-tab active" type="button" data-section="students">Students</button>
             <button class="section-tab" type="button" data-section="teachers">Teachers</button>
-          </div>
-          <div class="search-box modern">
-            <i class="fas fa-search"></i>
-            <input id="searchInput" type="search" placeholder="Search name, class, phone..." aria-label="Search">
           </div>
           <select id="classFilter" class="class-filter modern" aria-label="Filter by class">
             <option value="">All classes</option>

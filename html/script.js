@@ -247,6 +247,8 @@ const toast = document.getElementById("toast");
 const classFilter = document.getElementById("classFilter");
 const teacherGreeting = document.getElementById("teacherGreeting");
 const sectionTabs = document.getElementById("sectionTabs");
+const searchClearBtn = document.getElementById("searchClearBtn");
+const searchHint = document.getElementById("searchHint");
 let activeClassFilter = "";
 let currentUserRole = localStorage.getItem(roleKey) || "teacher";
 
@@ -299,7 +301,7 @@ function updateTeacherGreeting() {
   if (!teacherGreeting) return;
   const teacherName = localStorage.getItem(teacherNameKey);
   const roleLabel = currentUserRole === "admin" ? "Admin" : "Teacher";
-  teacherGreeting.textContent = teacherName ? `Hi, ${teacherName} (${roleLabel})` : `Hi, ${roleLabel}`;
+  teacherGreeting.textContent = teacherName ? `Welcome, ${teacherName} (${roleLabel})` : `Welcome, ${roleLabel}`;
 }
 
 function setMessage(message, type = "error") {
@@ -358,6 +360,39 @@ function handleLogout() {
 function matchesSearch(item) {
   const value = Object.values(item).join(" ").toLowerCase();
   return value.includes(searchTerm.toLowerCase());
+}
+
+function updateSearchUI(section, resultTotal) {
+  if (!searchInput) return;
+
+  const query = searchInput.value.trim();
+  const isTeachersSection = section === "teachers";
+  const placeholder = isTeachersSection
+    ? "Search teachers by name, subject, or ID"
+    : "Search students by name, class, or ID";
+
+  searchInput.placeholder = placeholder;
+  searchInput.setAttribute("aria-label", placeholder);
+
+  if (searchClearBtn) {
+    searchClearBtn.hidden = !query;
+  }
+
+  const searchBox = searchInput.closest(".search-box.modern");
+  if (searchBox) {
+    searchBox.classList.toggle("is-empty", !query);
+  }
+
+  if (searchHint) {
+    if (query) {
+      const noun = resultTotal === 1 ? "match" : "matches";
+      searchHint.textContent = `${resultTotal} ${noun} for "${query}"`;
+    } else {
+      searchHint.textContent = isTeachersSection
+        ? "Search teachers by name, subject, or ID."
+        : "Search students by name, class, or ID.";
+    }
+  }
 }
 
 function createPhoneActions(phone, label) {
@@ -437,6 +472,7 @@ function renderDirectory() {
   if (badgeLabelElement) {
     badgeLabelElement.textContent = badgeLabel;
   }
+  updateSearchUI(section, filtered.length);
   directoryGrid.innerHTML = filtered.map(item => section === "students" ? studentCard(item) : teacherCard(item)).join("");
   emptyState.classList.toggle("hidden", filtered.length !== 0);
   directoryGrid.classList.toggle("hidden", filtered.length === 0);
@@ -564,6 +600,15 @@ if (classFilter) {
   });
 }
 
+if (searchClearBtn) {
+  searchClearBtn.addEventListener("click", () => {
+    searchTerm = "";
+    searchInput.value = "";
+    renderDirectory();
+    searchInput.focus();
+  });
+}
+
 // Handle both logout buttons
 document.addEventListener("click", event => {
   const logoutButton = event.target.closest(".logout-btn") || event.target.closest(".logout-btn-mobile");
@@ -572,10 +617,12 @@ document.addEventListener("click", event => {
   }
 });
 
-searchInput.addEventListener("input", event => {
-  searchTerm = event.target.value.trim();
-  renderDirectory();
-});
+if (searchInput) {
+  searchInput.addEventListener("input", event => {
+    searchTerm = event.target.value.trim();
+    renderDirectory();
+  });
+}
 
 document.addEventListener("click", event => {
   const sectionButton = event.target.closest("[data-section]");
