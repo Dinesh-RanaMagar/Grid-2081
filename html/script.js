@@ -171,7 +171,8 @@ const teachers = [
     name: "Shreedhar Gywali",
     subject: "Principle",
     phone: "9847079070",
-    password: "9847079070"
+    password: "9847079070",
+    role: "admin"
   },
   {
     name: "Paras Poudel",
