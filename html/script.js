@@ -25,6 +25,9 @@ const students = [
   { name: "Sushma Tamang", class: "5", address: "Devchuli-14", studentPhone: "9806549440" },
   { name: "Umanga Thada", class: "5", address: "Devchuli-11", studentPhone: "9825483438" },
   { name: "Unisha Bk", class: "5", address: "Devchuli-14", studentPhone: "9708570683" },
+  
+  
+  //Class 8A
   { name: "Anshu Rai", class: "8'A'", address: "Devchuli-13", studentPhone: "9843910043" },
   { name: "Asbina Rana Magar", class: "8'A'", address: "Devchuli-11", studentPhone: "9765397890" },
   { name: "Asim Bista Magar", class: "8'A'", address: "Devchuli-11", studentPhone: "9843203802" },
@@ -56,6 +59,8 @@ const students = [
   { name: "Tara Parsad Wantaki", class: "8'A'", address: "Devchuli-14", studentPhone: "9768857595" },
   { name: "Tek Bahadur Magar", class: "8'A'", address: "Devchuli-14", studentPhone: "9825493546" },
   { name: "Yanisha Bk", class: "8'A'", address: "Devchuli-13", studentPhone: "9867568764" },
+
+  //class 7B
   { name: "Aashika Gurung", class: "7’B’", address: "Devchuli-", studentPhone: "" },
   { name: "Anil B.K.", class: "7’B’", address: "Devchuli-", studentPhone: "9811545787" },
   { name: "Anjal Magar", class: "7’B’", address: "Devchuli-", studentPhone: "078575011" },
@@ -79,8 +84,73 @@ const students = [
   { name: "Sachina Bishwokarma", class: "7’B’", address: "Devchuli-", studentPhone: "9826414702" },
   { name: "Sanjila Chitaure Magar", class: "7’B’", address: "Devchuli-", studentPhone: "078575011" },
   { name: "Sapana Thapa", class: "7’B’", address: "Devchuli-", studentPhone: "9806511344" },
-  { name: "Shishir Thapa Magar", class: "7’B’", address: "Devchuli-", studentPhone: "9821992664" }
+  { name: "Shishir Thapa Magar", class: "7’B’", address: "Devchuli-", studentPhone: "9821992664" },
 
+
+
+  //class 2
+  { "name": "Aaditya Khanal", "class": "2", "address": "Devchuli-14", "studentPhone": "9867859757" },
+  { "name": "Aashma Rana", "class": "2", "address": "Devchuli-11", "studentPhone": "9815400289" },
+  { "name": "Aayanshu Sigdel", "class": "2", "address": "Devchuli-10", "studentPhone": "9815286135" },
+  { "name": "Ajaya Ale Magar", "class": "2", "address": "Devchuli-14", "studentPhone": "9827481655" },
+  { "name": "Alisha Thapa", "class": "2", "address": "Devchuli-14", "studentPhone": "9813386132" },
+  { "name": "Amrit Bhusal", "class": "2", "address": "Devchuli-11", "studentPhone": "9847144383" },
+  { "name": "Amrit Tharu", "class": "2", "address": "Devchuli-13", "studentPhone": "9813148843" },
+  { "name": "Anjila Chitaure Magar", "class": "2", "address": "Devchuli-14", "studentPhone": "9827574701" },
+  { "name": "Anjila Disuwa", "class": "2", "address": "Devchuli-11", "studentPhone": "9821059836" },
+  { "name": "Asika Lungeli", "class": "2", "address": "Devchuli-14", "studentPhone": "9743690390" },
+  { "name": "Asim Rana", "class": "2", "address": "Devchuli-11", "studentPhone": "9814022529" },
+  { "name": "Asmita Rana", "class": "2", "address": "Devchuli-12", "studentPhone": "9864452875" },
+  { "name": "Barish Pandey", "class": "2", "address": "Devchuli-11", "studentPhone": "9704209800" },
+  { "name": "Bipinsha Chepanag", "class": "2", "address": "Devchuli-11", "studentPhone": "9700678287" },
+  { "name": "Biraj Mahato", "class": "2", "address": "Devchuli-13", "studentPhone": "982546374" },
+  { "name": "Biswash Tamang", "class": "2", "address": "Devchuli-13", "studentPhone": "9826434321" },
+  { "name": "Dipsan Rana", "class": "2", "address": "Devchuli-11", "studentPhone": "9821004714" },
+  { "name": "Diwan Saru", "class": "2", "address": "Devchuli-11", "studentPhone": "9766633360" },
+  { "name": "Diwani Dumre", "class": "2", "address": "Devchuli-11", "studentPhone": "9846225550" },
+  { "name": "Jenisara Rana", "class": "2", "address": "Devchuli-13", "studentPhone": "9864452875" },
+  { "name": "Khuman Sunari", "class": "2", "address": "Devchuli-14", "studentPhone": "9764356115" },
+  { "name": "Laxmi Pulami", "class": "2", "address": "Devchuli-11", "studentPhone": "9847495137" },
+  { "name": "Nikesh Pandit", "class": "2", "address": "Devchuli-13", "studentPhone": "97134147344" },
+  { "name": "Prinsika Disha Magar", "class": "2", "address": "Devchuli-11", "studentPhone": "9819412921" },
+  { "name": "Puspa Pandit", "class": "2", "address": "Devchuli-13", "studentPhone": "9713414734" },
+  { "name": "Puspa Kamal Aacharya", "class": "2", "address": "Devchuli-", "studentPhone": "" },
+  { "name": "Rabishma Achhama", "class": "2", "address": "Devchuli-13", "studentPhone": "9769318366" },
+  { "name": "Renuka Makim", "class": "2", "address": "Devchuli-14", "studentPhone": "98064667865" },
+  { "name": "Ridisha Bk", "class": "2", "address": "Devchuli-13", "studentPhone": "9826416931" },
+  { "name": "Satya Thakur", "class": "2", "address": "Devchuli-13", "studentPhone": "9807526346" },
+  { "name": "Srijan Bakawal", "class": "2", "address": "Devchuli-11", "studentPhone": "9842369881" },
+  { "name": "Sushant Tharu", "class": "2", "address": "Devchuli-13", "studentPhone": "9804177656" },
+  { "name": "Sujina Rana (N)", "class": "2", "address": "Devchuli-11", "studentPhone": "" },
+  { "name": "Aayush Kharu (N)", "class": "2", "address": "Devchuli-14", "studentPhone": "9811556213" },
+  
+  
+  //Class 7A
+    { "name": "Aashish Pulami", "class": "7A", "address": "Devchuli-3", "studentPhone": "9804404452" },
+    { "name": "Anish Tamang", "class": "7A", "address": "Devchuli-13", "studentPhone": "9743418704" },
+    { "name": "Ashok Sinjali Magar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9707909311" },
+    { "name": "Barsha Thapa Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9863579631" },
+    { "name": "Bipana Pariyar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9826429751" },
+    { "name": "Dewa Rakim Magar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9807432232" },
+    { "name": "Dipika Pulami", "class": "7A", "address": "Devchuli-11", "studentPhone": "9840959411" },
+    { "name": "Gayatri Sapkota", "class": "7A", "address": "Devchuli-12", "studentPhone": "9867111176" },
+    { "name": "Koshish Bahadur Chettri", "class": "7A", "address": "Devchuli-11", "studentPhone": "9877009890" },
+    { "name": "Manu Mahato Nuniya", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821059228" },
+    { "name": "Mebika Gurung", "class": "7A", "address": "Devchuli-11", "studentPhone": "9819406000" },
+    { "name": "Milisk Pata", "class": "7A", "address": "Devchuli-11", "studentPhone": "9824433993" },
+    { "name": "Pappu Mahato Nuniya", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821059228" },
+    { "name": "Puja Kumal", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821430738" },
+    { "name": "Pushpa Sarki", "class": "7A", "address": "Devchuli-11", "studentPhone": "970428738" },
+    { "name": "Rejin Thapa", "class": "7A", "address": "Devchuli-11", "studentPhone": "9816424210" },
+    { "name": "Roshan Thapa Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9827417780" },
+    { "name": "Shashi Rijal", "class": "7A", "address": "Devchuli-11", "studentPhone": "9700680109" },
+    { "name": "Sita Saru Magar", "class": "7A", "address": "Devchuli-13", "studentPhone": "9767006471" },
+    { "name": "Sonam Saru Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9808570693" },
+    { "name": "Sonisha Bache Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9814483999" },
+    { "name": "Srijan Rana", "class": "7A", "address": "Devchuli-13", "studentPhone": "9706597158" },
+    { "name": "Sweta Gahatraj", "class": "7A", "address": "Devchuli-14", "studentPhone": "9767629365" },
+    { "name": "Tikaram Sapkota", "class": "7A", "address": "Devchuli-13", "studentPhone": "9867836951" }
+  
 
 
 
@@ -98,29 +168,55 @@ const teachers = [
     role: "admin"
   },
   {
-    name: "Hari Prasad Sharma",
-    subject: "Science",
-    phone: "9812345678",
-    password: "teacher123"
+    name: "Shreedhar Gywali",
+    subject: "Principle",
+    phone: "9847079070",
+    password: "9847079070"
   },
   {
-    name: "Mina Gurung",
-    subject: "English",
-    phone: "9823456789",
-    password: "staff123"
+    name: "Paras Poudel",
+    subject: "vice-principle",
+    phone: "9861217060",
+    password: "9861217060"
   },
   {
-    name: "Ramesh Thapa",
-    subject: "Nepali",
-    phone: "9844567890",
-    password: "guest123"
+    name: "OM sunar",
+    subject: "Class teacher-8A",
+    phone: "981193351",
+    password: "981193351"
   },
   {
-    name: "Kabita Adhikari",
-    subject: "Social Studies",
-    phone: "9855678901",
-    password: "social123"
-  }
+    name: "Kalpana Bhandari",
+    subject: "Class teacher-3",
+    phone: "9847094742",
+    password: "9847094742"
+  },
+  {
+    name: "Kabita Ghemire",
+    subject: "Class teacher",
+    phone: "9844710700",
+    password: "9844710700"
+  },
+  {
+    name: " Chabikala Bhandari",
+    subject: "Subject Teacher",
+    phone: "9860295724",
+    password: "9860295724"
+  },
+  {
+    name: "Ghanshya Bhusal",
+    subject: "Class teacher-8B",
+    phone: "9867130155",
+    password: "9867130155"
+  },
+  {
+    name: "Jack Sir",
+    subject: "Class teacher-7A",
+    phone: "9847515747",
+    password: "9847515747"
+  },
+  
+  
 ];
 
 // Allowed users are teachers; derive credentials from the teachers list
