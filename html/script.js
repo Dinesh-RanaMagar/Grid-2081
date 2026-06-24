@@ -149,10 +149,163 @@ const students = [
     { "name": "Sonisha Bache Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9814483999" },
     { "name": "Srijan Rana", "class": "7A", "address": "Devchuli-13", "studentPhone": "9706597158" },
     { "name": "Sweta Gahatraj", "class": "7A", "address": "Devchuli-14", "studentPhone": "9767629365" },
-    { "name": "Tikaram Sapkota", "class": "7A", "address": "Devchuli-13", "studentPhone": "9867836951" }
+    { "name": "Tikaram Sapkota", "class": "7A", "address": "Devchuli-13", "studentPhone": "9867836951" },
   
 
+    //class 3
+    { "name": "Aachal Thapa (N)", "class": "3", "address": "Devchuli-", "studentPhone": "" },
+    { "name": "Aayush Thapa Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9825456354" },
+    { "name": "Asmita Nepali", "class": "3", "address": "Devchuli-", "studentPhone": "9812902169" },
+    { "name": "Barsa Pulami", "class": "3", "address": "Devchuli-", "studentPhone": "9707332281" },
+    { "name": "Dibyan Bhusal", "class": "3", "address": "Devchuli-", "studentPhone": "9867130155" },
+    { "name": "Dipesh Saru Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9766633360" },
+    { "name": "Dipin Pariyar (N)", "class": "3", "address": "Devchuli-", "studentPhone": "9826107083" },
+    { "name": "Dipsan Aale", "class": "3", "address": "Devchuli-", "studentPhone": "9713940525" },
+    { "name": "Diya Saru", "class": "3", "address": "Devchuli-", "studentPhone": "9806398426" },
+    { "name": "Icchya Pariyar (N)", "class": "3", "address": "Devchuli-", "studentPhone": "9812966505" },
+    { "name": "Imron Rana", "class": "3", "address": "Devchuli-", "studentPhone": "9810676624" },
+    { "name": "Kristi Disha Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9828920838" },
+    { "name": "Manisha Nepali", "class": "3", "address": "Devchuli-", "studentPhone": "9811956055" },
+    { "name": "Niharika Gaha Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9823973066" },
+    { "name": "Priska Lungeli", "class": "3", "address": "Devchuli-", "studentPhone": "9815481781" },
+    { "name": "Renuka Rana", "class": "3", "address": "Devchuli-", "studentPhone": "9768346749" },
+    { "name": "Rojina Saru", "class": "3", "address": "Devchuli-", "studentPhone": "9818999880" },
+    { "name": "Rubin Nepali", "class": "3", "address": "Devchuli-", "studentPhone": "9811956055" },
+    { "name": "Sabina Tamang", "class": "3", "address": "Devchuli-", "studentPhone": "9825460897" },
+    { "name": "Sajan Thakuri", "class": "3", "address": "Devchuli-", "studentPhone": "9807526347" },
+    { "name": "Samar Pariyar", "class": "3", "address": "Devchuli-", "studentPhone": "9867522902" },
+    { "name": "Samar Thapa", "class": "3", "address": "Devchuli-", "studentPhone": "9743442343" },
+    { "name": "Samiksha Disha Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9819468496" },
+    { "name": "Samir Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9864471481" },
+    { "name": "Samir Mansuri", "class": "3", "address": "Devchuli-", "studentPhone": "9706760964" },
+    { "name": "Samjana Rana", "class": "3", "address": "Devchuli-", "studentPhone": "9814022529" },
+    { "name": "Shirshir Shresstha", "class": "3", "address": "Devchuli-", "studentPhone": "9847024410" },
+    { "name": "Shiva Thapa", "class": "3", "address": "Devchuli-", "studentPhone": "9867296479" },
+    { "name": "Suhana Gaha", "class": "3", "address": "Devchuli-", "studentPhone": "9823973066" },
+    { "name": "Suhana Pariyar (N)", "class": "3", "address": "Devchuli-", "studentPhone": "9818308134" },
+    { "name": "Suraj Thada Magar", "class": "3", "address": "Devchuli-", "studentPhone": "9764652724" },
+    { "name": "Swostika Saru", "class": "3", "address": "Devchuli-", "studentPhone": "9705604547" },
+    { "name": "Kayak Alam", "class": "3", "address": "Devchuli-13", "studentPhone": "9815433918" },
+    
+// class 4
+    
+    { "name": "Aarush Shrestha", "class": "4", "address": "Devchuli-11", "studentPhone": "9707447707" },
+    { "name": "Aayoush Sigdel", "class": "4", "address": "Devchuli-11", "studentPhone": "9875286735" },
+    { "name": "Amrita Bache", "class": "4", "address": "Devchuli-11", "studentPhone": "9766259349" },
+    { "name": "Anjana Bayembu", "class": "4", "address": "Devchuli-11", "studentPhone": "9844787584" },
+    { "name": "Bimal Kumal", "class": "4", "address": "Devchuli-14", "studentPhone": "9713940415" },
+    { "name": "Bimal Tamang", "class": "4", "address": "Devchuli-13", "studentPhone": "9826434321" },
+    { "name": "Bipin Birkatta", "class": "4", "address": "Devchuli-11", "studentPhone": "9749395160" },
+    { "name": "Bishesta Shrestha", "class": "4", "address": "Devchuli-14", "studentPhone": "9866620472" },
+    { "name": "Dev Sunari", "class": "4", "address": "Devchuli-11", "studentPhone": "9709487695" },
+    { "name": "Dipak Kumar", "class": "4", "address": "Devchuli-", "studentPhone": "" },
+    { "name": "Dipesh Phyali", "class": "4", "address": "Devchuli-12", "studentPhone": "9744545745" },
+    { "name": "Enjila Khanadaluk", "class": "4", "address": "Devchuli-14", "studentPhone": "9824436081" },
+    { "name": "Ganesh Aadhikari", "class": "4", "address": "Devchuli-11", "studentPhone": "9713895827" },
+    { "name": "Jeny Gurung", "class": "4", "address": "Devchuli-11", "studentPhone": "9765634938" },
+    { "name": "Kasmira Nepali", "class": "4", "address": "Devchuli-14", "studentPhone": "9842910513" },
+    { "name": "Khusbu Sunari", "class": "4", "address": "Devchuli-14", "studentPhone": "9764652235" },
+    { "name": "Koplia Sarki (N)", "class": "4", "address": "Devchuli-11", "studentPhone": "9743658485" },
+    { "name": "Manish Pariyar (N)", "class": "4", "address": "Devchuli-14", "studentPhone": "9818308134" },
+    { "name": "Pratap Ghahatraj", "class": "4", "address": "Devchuli-14", "studentPhone": "9827481583" },
+    { "name": "Prince Tamang (N)", "class": "4", "address": "Devchuli-11", "studentPhone": "9812906716" },
+    { "name": "Pujan Kumal", "class": "4", "address": "Devchuli-13", "studentPhone": "9821430738" },
+    { "name": "Rajan Sarki", "class": "4", "address": "Devchuli-11", "studentPhone": "9706760934" },
+    { "name": "Ritika Kumal", "class": "4", "address": "Devchuli-14", "studentPhone": "9823973157" },
+    { "name": "Rohit Makim", "class": "4", "address": "Devchuli-11", "studentPhone": "9826681767" },
+    { "name": "Sabita Nepali", "class": "4", "address": "Devchuli-14", "studentPhone": "9827175103" },
+    { "name": "Sakshi Thakuri", "class": "4", "address": "Devchuli-13", "studentPhone": "9807526347" },
+    { "name": "Samikshya Priyar", "class": "4", "address": "Devchuli-14", "studentPhone": "9826471568" },
+    { "name": "Shirish Saru (N)", "class": "4", "address": "Devchuli-14", "studentPhone": "9747234472" },
+    { "name": "Subashna Tamang", "class": "4", "address": "Devchuli-11", "studentPhone": "9764356088" },
+    { "name": "Sunil Nepali", "class": "4", "address": "Devchuli-11", "studentPhone": "9811956055" },
+    { "name": "Urmila Sharki", "class": "4", "address": "Devchuli-11", "studentPhone": "9704208738" },
+    // class10A
 
+
+    
+  
+    { "name": "Alisa Rana", "class": "10A", "address": "Devchuli-14", "studentPhone": "9768353302" },
+    { "name": "Anisha Ale", "class": "10A", "address": "Devchuli-14", "studentPhone": "9816118974" },
+    { "name": "Asmit Sunar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9825488943" },
+    { "name": "Buddhi Thapa Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9806607951" },
+    { "name": "Chiran Kanhu Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9812911154" },
+    { "name": "Gaurab Ghimire", "class": "10A", "address": "Devchuli-10", "studentPhone": "9845081651" },
+    { "name": "Gir Prasad Maski", "class": "10A", "address": "Devchuli-14", "studentPhone": "9829544995" },
+    { "name": "Hom Prakash Thapa", "class": "10A", "address": "Devchuli-12", "studentPhone": "9800744903" },
+    { "name": "Karuna Darlami Magar", "class": "10A", "address": "Devchuli-11", "studentPhone": "9819442451" },
+    { "name": "Laxuman Makim", "class": "10A", "address": "Devchuli-14", "studentPhone": "9842598330" },
+    { "name": "Manisha Thapa", "class": "10A", "address": "Devchuli-14", "studentPhone": "9817152115" },
+    { "name": "Manoj Chitaure Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9804408140" },
+    { "name": "Nishchal Saru Magar", "class": "10A", "address": "Devchuli-12", "studentPhone": "9817562099" },
+    { "name": "Parbati Thada", "class": "10A", "address": "Devchuli-14", "studentPhone": "9708918972" },
+    { "name": "Pratikshya Sapkota", "class": "10A", "address": "Devchuli-12", "studentPhone": "9867111176" },
+    { "name": "Rim Kumar Lungeli Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9824426649" },
+    { "name": "Sabina Rana Magar", "class": "10A", "address": "Devchuli-11", "studentPhone": "9816440243" },
+    { "name": "Saikshya B.K", "class": "10A", "address": "Devchuli-14", "studentPhone": "9816416702" },
+    { "name": "Sandhya Sapkota", "class": "10A", "address": "Devchuli-12", "studentPhone": "9867836951" },
+    { "name": "Sandip Tamang", "class": "10A", "address": "Devchuli-12", "studentPhone": "98295826" },
+    { "name": "Sangita Lungeli Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9814413112" },
+    { "name": "Sonam Soti Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9811451500" },
+    { "name": "Soniya Nepali", "class": "10A", "address": "Devchuli-14", "studentPhone": "9827661771" },
+    { "name": "Tali Maya Rana Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9869291649" },
+    { "name": "Teju Birkatta Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9806933065" },
+    { "name": "Tishna Thapa Magar", "class": "10A", "address": "Devchuli-14", "studentPhone": "9811556213" },
+    { "name": "Upendra Ale Magar", "class": "10A", "address": "Devchuli-11", "studentPhone": "9840968124" },
+
+    //class 10B
+  
+    { "name": "Bhumika Shrestha", "class": "10B", "address": "Devchuli-14", "studentPhone": "976284364" },
+    { "name": "Binita Chidi", "class": "10B", "address": "Devchuli-14", "studentPhone": "9812996526" },
+    { "name": "Dinanath Prasad Shah Kanhu", "class": "10B", "address": "Devchuli-13", "studentPhone": "9767603726" },
+    { "name": "Dipendra Rakim Magar", "class": "10B", "address": "Devchuli-1", "studentPhone": "9768375935" },
+    { "name": "Gam Maya Susling Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "9804411952" },
+    { "name": "Jasmin Sunari", "class": "10B", "address": "Devchuli-13", "studentPhone": "9869674300" },
+    { "name": "Laxmi Bk", "class": "10B", "address": "Devchuli-3", "studentPhone": "9826614113" },
+    { "name": "Min Maya Thada Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "9804411952" },
+    { "name": "Min Bahadur Makim", "class": "10B", "address": "Devchuli-11", "studentPhone": "9816459046" },
+    { "name": "Pabi Maya Sarki", "class": "10B", "address": "Devchuli-13", "studentPhone": "9809357085" },
+    { "name": "Ramesh Lungeli Thapa", "class": "10B", "address": "Devchuli-14", "studentPhone": "9800779609" },
+    { "name": "Rasmi Pulami Magar", "class": "10B", "address": "Devchuli-3", "studentPhone": "9804404452" },
+    { "name": "Rom Maya Thada Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "986790692" },
+    { "name": "Roshan Saru Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "9820278495" },
+    { "name": "Samir Rana Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "9815401856" },
+    { "name": "Shusil B.K", "class": "10B", "address": "Devchuli-15", "studentPhone": "9811545787" },
+    { "name": "Sirjana B.K", "class": "10B", "address": "Devchuli-10", "studentPhone": "9700562910" },
+    { "name": "Subash Mahato", "class": "10B", "address": "Devchuli-", "studentPhone": "9767005458" },
+    { "name": "Tas Bahadur Gaha Magar", "class": "10B", "address": "Devchuli-14", "studentPhone": "9869949989" },
+    { "name": "Til Raj Nepali", "class": "10B", "address": "Devchuli-13", "studentPhone": "9821442893" },
+    { "name": "Urmila Saru", "class": "10B", "address": "Devchuli-12", "studentPhone": "9811864309" },
+    { "name": "Yogendra Lungeli", "class": "10B", "address": "Devchuli-", "studentPhone": "9864471236" },
+    { "name": "Salina Pariyar", "class": "10B", "address": "Devchuli-11", "studentPhone": "9826101083" },
+
+   // class7A
+    
+  
+    { "name": "Aashish Pulami", "class": "7A", "address": "Devchuli-3", "studentPhone": "9804404452" },
+    { "name": "Anish Tamang", "class": "7A", "address": "Devchuli-13", "studentPhone": "9743418704" },
+    { "name": "Ashok Sinjali Magar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9707909311" },
+    { "name": "Barsha Thapa Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9413388613" },
+    { "name": "Bipana Pariyar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9826429775" },
+    { "name": "Dewa Rakim Magar", "class": "7A", "address": "Devchuli-14", "studentPhone": "9807432232" },
+    { "name": "Dipika Pulami", "class": "7A", "address": "Devchuli-11", "studentPhone": "9840959411" },
+    { "name": "Gayatri Sapkota", "class": "7A", "address": "Devchuli-12", "studentPhone": "9867111176" },
+    { "name": "Koshish Bahadur Chettri", "class": "7A", "address": "Devchuli-11", "studentPhone": "9877009890" },
+    { "name": "Manu Mahato Nuniya", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821059228" },
+    { "name": "Mebika Gurung", "class": "7A", "address": "Devchuli-11", "studentPhone": "9804469567" },
+    { "name": "Milisk Pata", "class": "7A", "address": "Devchuli-11", "studentPhone": "9824433993" },
+    { "name": "Pappu Mahato Nuniya", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821059228" },
+    { "name": "Puja Kumal", "class": "7A", "address": "Devchuli-13", "studentPhone": "9821430738" },
+    { "name": "Pushpa Sarki", "class": "7A", "address": "Devchuli-11", "studentPhone": "9704287385" },
+    { "name": "Rejin Thapa", "class": "7A", "address": "Devchuli-11", "studentPhone": "9816424210" },
+    { "name": "Roshan Thapa Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9827417780" },
+    { "name": "Shashi Rijal", "class": "7A", "address": "Devchuli-11", "studentPhone": "9700680109" },
+    { "name": "Sita Saru Magar", "class": "7A", "address": "Devchuli-13", "studentPhone": "9767006471" },
+    { "name": "Sonam Saru Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9808570693" },
+    { "name": "Sonisha Bache Magar", "class": "7A", "address": "Devchuli-11", "studentPhone": "9726959349" },
+    { "name": "Srijan Rana", "class": "7A", "address": "Devchuli-13", "studentPhone": "9706597158" },
+    { "name": "Sweta Gahatraj", "class": "7A", "address": "Devchuli-14", "studentPhone": "9767629365" },
+    { "name": "Tikaram Sapkota", "class": "7A", "address": "Devchuli-13", "studentPhone": "9867836951" },
 
 ];
 
@@ -448,6 +601,70 @@ function teacherCard(teacher) {
   `;
 }
 
+function normalizeClassValue(rawClass) {
+  if (!rawClass) return "";
+
+  const value = String(rawClass).trim().toLowerCase();
+  if (!value) return "";
+  if (value === "nursery" || value === "nur") return "Nursery";
+  if (value === "kg" || value === "kindergarten") return "KG";
+
+  const cleaned = value
+    .replace(/[’'`]/g, "")
+    .replace(/\s+/g, "")
+    .replace(/\(|\)/g, "")
+    .replace(/"/g, "");
+
+  const sectionMatch = cleaned.match(/^(\d+)([a-z])$/i);
+  if (sectionMatch) {
+    return `${sectionMatch[1]}${sectionMatch[2].toUpperCase()}`;
+  }
+
+  const numericMatch = cleaned.match(/^(\d+)$/);
+  if (numericMatch) {
+    return numericMatch[1];
+  }
+
+  return cleaned.toUpperCase();
+}
+
+function formatClassLabel(rawClass) {
+  const normalized = normalizeClassValue(rawClass);
+  if (!normalized) return "All classes";
+  if (normalized === "Nursery") return "Nursery";
+  if (normalized === "KG") return "KG";
+  if (/^\d+$/.test(normalized)) return `Class ${normalized}`;
+  return `Class ${normalized}`;
+}
+
+function getClassSortKey(rawClass) {
+  const normalized = normalizeClassValue(rawClass);
+  if (normalized === "Nursery") return [0, 0];
+  if (normalized === "KG") return [1, 0];
+
+  const sectionMatch = normalized.match(/^(\d+)([A-Z])$/);
+  if (sectionMatch) {
+    return [2 + Number(sectionMatch[1]), sectionMatch[2].charCodeAt(0) - 64];
+  }
+
+  const numericMatch = normalized.match(/^(\d+)$/);
+  if (numericMatch) {
+    return [2 + Number(numericMatch[1]), 0];
+  }
+
+  return [99, 0];
+}
+
+function getClassOptions() {
+  return Array.from(new Set(students.map(student => normalizeClassValue(student.class))))
+    .filter(Boolean)
+    .sort((a, b) => {
+      const aKey = getClassSortKey(a);
+      const bKey = getClassSortKey(b);
+      return aKey[0] - bKey[0] || aKey[1] - bKey[1] || a.localeCompare(b);
+    });
+}
+
 function renderDirectory() {
   const isAdmin = currentUserRole === "admin";
   const section = isAdmin ? activeSection : "students";
@@ -458,7 +675,7 @@ function renderDirectory() {
     if (!matchesSearch(item)) return false;
     // class filter (only for students)
     if (section === 'students' && activeClassFilter) {
-      return item.class === activeClassFilter;
+      return normalizeClassValue(item.class) === activeClassFilter;
     }
     return true;
   });
@@ -484,8 +701,8 @@ function renderDirectory() {
 
 function populateClassFilter() {
   if (!classFilter) return;
-  const classes = Array.from(new Set(students.map(s => s.class))).sort((a, b) => Number(a) - Number(b));
-  classFilter.innerHTML = '<option value="">All classes</option>' + classes.map(c => `<option value="${c}">Class ${c}</option>`).join('');
+  const classes = getClassOptions();
+  classFilter.innerHTML = '<option value="">All classes</option>' + classes.map(c => `<option value="${c}">${formatClassLabel(c)}</option>`).join('');
   classFilter.value = activeClassFilter || '';
 }
 
