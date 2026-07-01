@@ -633,8 +633,7 @@ function formatClassLabel(rawClass) {
   if (!normalized) return "All classes";
   if (normalized === "Nursery") return "Nursery";
   if (normalized === "KG") return "KG";
-  if (/^\d+$/.test(normalized)) return `Class ${normalized}`;
-  return `Class ${normalized}`;
+  return normalized;
 }
 
 function getClassSortKey(rawClass) {
