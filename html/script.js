@@ -310,68 +310,166 @@ const students = [
 ];
 
 
-
-
 const teachers = [
   {
-    name: "Dinesh Rana Magar",
-    subject: "Math",
+    name: "Dinesh Rana",
+    subject: "Subject Teacher",
     phone: "9814462637",
-    password: "admin123",
+    password: "9814462637",
     role: "admin"
   },
   {
-    name: "Shreedhar Gywali",
-    subject: "Principle",
+    name: "Shreedhar Gyawali",
+    subject: "Principal",
     phone: "9847079070",
     password: "9847079070",
     role: "admin"
   },
   {
-    name: "Paras Poudel",
-    subject: "vice-principle",
+    name: "Paras Poudel (Class Teacher-9B)",
+    subject: "Vice Principal",
     phone: "9861217060",
     password: "9861217060"
   },
   {
-    name: "OM sunar",
-    subject: "Class teacher-8A",
-    phone: "981193351",
-    password: "981193351"
+    name: "Durga Datta Ghimire",
+    subject: "Class Teacher-10A",
+    phone: "9847073279",
+    password: "9847073279"
   },
   {
-    name: "Kalpana Bhandari",
-    subject: "Class teacher-3",
-    phone: "9847094742",
-    password: "9847094742"
+    name: "Chandrakala Pandey",
+    subject: "Class Teacher-10B",
+    phone: "9867106128",
+    password: "9867106128"
   },
   {
-    name: "Kabita Ghemire",
-    subject: "Class teacher",
+    name: "Sita Neupane",
+    subject: "Subject Teacher",
+    phone: "9866043621",
+    password: "9866043621"
+  },
+  {
+    name: "Bishnu P. Gautam",
+    subject: "Subject Teacher",
+    phone: "9857041168",
+    password: "9857041168"
+  },
+  {
+    name: "Kaushalya Banjade",
+    subject: "Subject Teacher",
+    phone: "9869783164",
+    password: "9869783164"
+  },
+  {
+    name: "Soma Baral",
+    subject: "Class Teacher-2",
+    phone: "9847484902",
+    password: "9847484902"
+  },
+  {
+    name: "Kamala Belbase",
+    subject: "Subject Teacher",
+    phone: "9847122470",
+    password: "9847122470"
+  },
+  {
+    name: "Durga Paudel",
+    subject: "Subject Teacher",
+    phone: "",
+    password: ""
+  },
+  {
+    name: "Kabita Ghimire",
+    subject: "Class Teacher-6",
     phone: "9844710700",
     password: "9844710700"
   },
   {
-    name: " Chabikala Bhandari",
+    name: "Chhabikala Bhandari",
     subject: "Subject Teacher",
     phone: "9860295724",
     password: "9860295724"
   },
   {
-    name: "Ghanshya Bhusal",
-    subject: "Class teacher-8B",
+    name: "Sarita J.C.",
+    subject: "Class Teacher-7A",
+    phone: "9764661478",
+    password: "9764661478"
+  },
+  {
+    name: "Bhagirathi Pandey",
+    subject: "Class Teacher-4",
+    phone: "9848801525",
+    password: "9848801525"
+  },
+  {
+    name: "Ghanshyam Bhusal",
+    subject: "Class Teacher-7B",
     phone: "9867130155",
     password: "9867130155"
   },
   {
-    name: "Jack Sir",
-    subject: "Class teacher-7A",
-    phone: "9847515747",
-    password: "9847515747"
+    name: "Jitnarayan Mahato",
+    subject: "Class Teacher-8B",
+    phone: "",
+    password: ""
   },
-  
-  
+  {
+    name: "Tika Chapagain",
+    subject: "Subject Teacher",
+    phone: "9842922778",
+    password: "9842922778"
+  },
+  {
+    name: "Kiran Kharel",
+    subject: "Subject Teacher",
+    phone: "",
+    password: ""
+  },
+  {
+    name: "Kalpana Bhandari",
+    subject: "Class Teacher-3",
+    phone: "9847094742",
+    password: "9847094742"
+  },
+  {
+    name: "Tiku Gurung",
+    subject: "Class Teacher-1",
+    phone: "9807411630",
+    password: "9807411630"
+  },
+  {
+    name: "Laxmi Bhandari",
+    subject: "Class Teacher-9A",
+    phone: "9862270746",
+    password: "9862270746"
+  },
+  {
+    name: "Om Sunar",
+    subject: "Class Teacher-8A",
+    phone: "9811933351",
+    password: "9811933351"
+  },
+  {
+    name: "Bibas Bhattarai",
+    subject: "Class Teacher-5",
+    phone: "9862709649",
+    password: "9862709649"
+  },
+  {
+    name: "Kiran Shrestha",
+    subject: "Class Teacher-UKG",
+    password: "9820277598"
+  },
+  {
+    name: "Dhana Sapkota",
+    subject: "Class Teacher-NUR",
+    phone: "",
+    password: ""
+  }
 ];
+
 
 // Allowed users are teachers; derive credentials from the teachers list
 const allowedUsers = teachers.map(t => ({ phone: t.phone, password: t.password }));
@@ -582,12 +680,13 @@ function studentCard(student) {
 
 function teacherCard(teacher) {
   const initials = teacher.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+  const subjectLabel = teacher.subject || "Teacher";
   return `
     <article class="contact-card" data-name="${teacher.name}">
       <div class="avatar" aria-hidden="true">${initials}</div>
       <div class="card-body">
         <div class="card-title">${teacher.name}</div>
-        <div class="card-meta">${teacher.subject} <strong>Teacher</strong></div>
+        <div class="card-meta">${subjectLabel}</div>
         <div class="card-row">
           <div class="card-phones">
             <div class="phone-item"><small class="muted">Phone</small><div class="phone-value">${teacher.phone}</div></div>
