@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Certificate Printing System</title>
+    <link rel="stylesheet" href="StyleCertificate.css">
+</head>
+<body>
+<div class="app-container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🏫 Transfer Certificate Printing System</h1>
+        <p class="subtitle">Professional A4 Landscape (220 mm × 200 mm) Certificate Printer</p>
+    </div>
+
+    <div class="main-grid">
+
+        <!-- ================================================
+             LEFT PANEL: FORM + POSITION SETTINGS
+        ================================================ -->
+        <div class="left-panel">
+
+            <!-- STUDENT FORM -->
+            <div class="section">
+                <h2>📋 Student Information</h2>
+                <form id="certificateForm" autocomplete="off">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Serial No.</label>
+                            <input type="text" id="SerialNo" placeholder="e.g. 001">
+                        </div>
+                        <div class="form-group">
+                            <label>Student Name</label>
+                            <input type="text" id="StudentName" placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Father Name</label>
+                            <input type="text" id="FatherName" placeholder="Father's name">
+                        </div>
+                        <div class="form-group">
+                            <label>Mother Name</label>
+                            <input type="text" id="MotherName" placeholder="Mother's name">
+                        </div>
+                        <div class="form-group">
+                            <label>Municipality / RM</label>
+                            <input type="text" id="Municipality" placeholder="Municipality">
+                        </div>
+                        <div class="form-group">
+                            <label>Ward Number</label>
+                            <input type="text" id="WardNumber" placeholder="Ward No.">
+                        </div>
+                        <div class="form-group">
+                            <label>District</label>
+                            <input type="text" id="District" placeholder="District">
+                        </div>
+                        <div class="form-group">
+                            <label>School Admission Year</label>
+                            <input type="text" id="SchoolAdmissionDate" placeholder="e.g. 2070">
+                        </div>
+                        <div class="form-group">
+                            <label>Leaving Year</label>
+                            <input type="text" id="LeavingDate" placeholder="e.g. 2080">
+                        </div>
+                        <div class="form-group">
+                            <label>SEE Passed Year</label>
+                            <input type="text" id="SEEPassedYear" placeholder="e.g. 2080">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth (BS)</label>
+                            <input type="text" id="DateOfBirthBS" placeholder="YYYY-MM-DD">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth (AD)</label>
+                            <input type="text" id="DateOfBirthAD" placeholder="YYYY-MM-DD">
+                        </div>
+                        <div class="form-group">
+                            <label>Registration No.</label>
+                            <input type="text" id="RegistrationNo" placeholder="Registration number">
+                        </div>
+                        <div class="form-group">
+                            <label>Symbol No.</label>
+                            <input type="text" id="SymbolNo" placeholder="Symbol number">
+                        </div>
+                        <div class="form-group">
+                            <label>GPA</label>
+                            <input type="text" id="GPA" placeholder="e.g. 3.85">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Issue</label>
+                            <input type="text" id="DateOfIssue" placeholder="YYYY-MM-DD">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Certificate Background Image</label>
+                            <input type="file" id="certificateImage" accept="image/*">
+                        </div>
+                    </div><!-- /.form-grid -->
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="loadSampleBtn">📋 Sample</button>
+                        <button type="button" class="btn btn-primary"   id="previewBtn">👁 Preview</button>
+                        <button type="button" class="btn btn-success"   id="printBtn">🖨 Print</button>
+                        <button type="button" class="btn btn-danger"    id="clearBtn">🗑 Clear</button>
+                    </div>
+                </form>
+                <div id="statusMessage" class="status-message"></div>
+            </div><!-- /.section student form -->
+
+            <!-- POSITION SETTINGS -->
+            <div class="section">
+                <h2>📍 Position Settings</h2>
+                <p class="info-text">All coordinates are in millimetres from the top-left corner (0, 0) of the certificate.</p>
+                <div class="position-toolbar">
+                    <button class="btn btn-primary"   id="calibrationBtn">📐 Guide</button>
+                    <button class="btn btn-primary"   id="boldAllBtn">𝐁 Bold All</button>
+                    <button class="btn btn-warning"   id="resetFieldBtn">↩ Reset Field</button>
+                    <button class="btn btn-warning"   id="resetAllBtn">🔄 Reset All</button>
+                    <button class="btn btn-success"   id="exportBtn">💾 Export JSON</button>
+                    <button class="btn btn-secondary" id="importBtn">📂 Import JSON</button>
+                </div>
+                <div class="position-toolbar" style="margin-top: 10px; gap: 8px; align-items: center;">
+                    <label style="white-space: nowrap">Global X offset</label>
+                    <input type="number" id="globalXOffset" step="0.5" value="60" style="width:70px">
+                    <label style="white-space: nowrap">Global Y offset</label>
+                    <input type="number" id="globalYOffset" step="0.5" value="0" style="width:70px">
+                    <button class="btn btn-secondary" id="resetGlobalOffsetBtn">↩ Reset Offset</button>
+                </div>
+                <p class="info-text" style="margin-top: 4px;">Use these if your printed form is shifted on the page. Adjust X to move text right/left and Y to move it down/up.</p>
+                <input type="file" id="importPositionsInput" accept=".json" hidden>
+                <div id="positionControls" class="position-controls-grid"></div>
+            </div><!-- /.section position settings -->
+
+        </div><!-- /.left-panel -->
+
+        <!-- ================================================
+             RIGHT PANEL: PREVIEW
+        ================================================ -->
+        <div class="right-panel">
+            <div class="section">
+                <h2>📄 Certificate Preview</h2>
+
+                <!-- PREVIEW TOOLBAR -->
+                <div class="preview-toolbar">
+                    <button class="btn btn-sm" id="zoomOutBtn">➖</button>
+                    <button class="btn btn-sm" id="resetZoomBtn">1:1</button>
+                    <button class="btn btn-sm" id="zoomInBtn">➕</button>
+                    <button class="btn btn-sm" id="toggleCrosshairBtn">✛ Crosshair</button>
+                    <button class="btn btn-sm" id="toggleRulerBtn">📏 Ruler</button>
+                    <span class="tb-divider"></span>
+                    <button class="btn btn-sm btn-rotate" id="rotateLeftBtn"  title="Rotate 90° counter-clockwise">⟲ Left</button>
+                    <button class="btn btn-sm btn-rotate" id="rotateCycleBtn" title="Cycle: 0° → 90° → 180° → 270°">🔄 Rotate</button>
+                    <button class="btn btn-sm btn-rotate" id="rotateRightBtn" title="Rotate 90° clockwise">⟳ Right</button>
+                    <span id="rotationBadge" class="rotation-badge">Rotation: 0°</span>
+                    <span id="zoomLevel" class="zoom-badge">100%</span>
+                </div>
+
+                <!-- COORDINATE & FIELD INFO BAR -->
+                <div class="coordinate-info">
+                    <span>X: <b id="coordX">0.0</b> mm</span>
+                    <span>Y: <b id="coordY">0.0</b> mm</span>
+                    <span id="selectedFieldDisplay">No field selected</span>
+                </div>
+
+                <!-- PREVIEW AREA -->
+                <div id="previewContainer" class="preview-container">
+                    <!-- canvas is created by JS and injected here -->
+                </div>
+
+            </div><!-- /.section preview -->
+        </div><!-- /.right-panel -->
+
+    </div><!-- /.main-grid -->
+</div><!-- /.app-container -->
+
+<script src="ScriptCertificate.js"></script>
+</body>
+</html>

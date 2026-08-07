@@ -470,6 +470,12 @@ const teachers = [
   }
 ];
 
+const staff = [
+  { name: "Rita Dumre", title: "Office Staff", phone: "" },
+  { name: "Suraj Subedi", title: "Office Staff", phone: "9744456596" },
+  { name: "Manu Kuwar", title: "Office Staff", phone: "" }
+];
+
 
 // Allowed users are teachers; derive credentials from the teachers list
 const allowedUsers = teachers.map(t => ({ phone: t.phone, password: t.password }));
@@ -478,6 +484,7 @@ const allowedUserCount = allowedUsers.length;
 const authKey = "grid2081-contact-auth";
 const teacherNameKey = "grid2081-contact-teacher-name";
 const roleKey = "grid2081-contact-role";
+const staffStorageKey = "grid2081-contact-staff-data";
 let activeSection = "students";
 let searchTerm = "";
 
@@ -496,11 +503,14 @@ const sectionTitle = document.getElementById("sectionTitle");
 const activeEyebrow = document.getElementById("activeEyebrow");
 const toast = document.getElementById("toast");
 const classFilter = document.getElementById("classFilter");
+const sectionFilter = document.getElementById("sectionFilter");
+
 const teacherGreeting = document.getElementById("teacherGreeting");
 const sectionTabs = document.getElementById("sectionTabs");
 const searchClearBtn = document.getElementById("searchClearBtn");
 const searchHint = document.getElementById("searchHint");
 let activeClassFilter = "";
+let activeSectionFilter = "";
 let currentUserRole = localStorage.getItem(roleKey) || "teacher";
 
 function showLoader() {
@@ -541,10 +551,7 @@ function applyRolePermissions() {
     dashboardView.classList.toggle("teacher-mode", !isAdmin);
   }
   if (sectionTabs) {
-    sectionTabs.classList.toggle("hidden", !isAdmin);
-  }
-  if (!isAdmin) {
-    activeSection = "students";
+    sectionTabs.classList.remove("hidden");
   }
 }
 
@@ -647,11 +654,15 @@ function updateSearchUI(section, resultTotal) {
 }
 
 function createPhoneActions(phone, label) {
+  if (!phone) {
+    return `<div class="contact-actions"><span class="muted">No phone available</span></div>`;
+  }
+  const normalizedPhone = normalizePhone(phone);
   return `
     <div class="contact-actions">
-      <a class="icon-btn call" href="tel:${phone}" title="Call ${label}"><i class="fas fa-phone"></i></a>
-      <a class="icon-btn wa" href="https://wa.me/${phone}" target="_blank" rel="noopener" title="WhatsApp ${label}"><i class="fab fa-whatsapp"></i></a>
-      <button class="icon-btn copy" type="button" data-phone="${phone}" title="Copy ${label} number"><i class="fas fa-copy"></i></button>
+      <a class="icon-btn call" href="tel:${normalizedPhone}" title="Call ${label}"><i class="fas fa-phone"></i></a>
+      <a class="icon-btn wa" href="https://wa.me/${normalizedPhone}" target="_blank" rel="noopener" title="WhatsApp ${label}"><i class="fab fa-whatsapp"></i></a>
+      <button class="icon-btn copy" type="button" data-phone="${normalizedPhone}" title="Copy ${label} number"><i class="fas fa-copy"></i></button>
     </div>
   `;
 }
@@ -681,18 +692,42 @@ function studentCard(student) {
 function teacherCard(teacher) {
   const initials = teacher.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
   const subjectLabel = teacher.subject || "Teacher";
+  const categoryLabel = getTeacherCategory(teacher.subject);
   return `
     <article class="contact-card" data-name="${teacher.name}">
       <div class="avatar" aria-hidden="true">${initials}</div>
       <div class="card-body">
         <div class="card-title">${teacher.name}</div>
         <div class="card-meta">${subjectLabel}</div>
+        <div class="card-meta"><small class="muted">Type</small> ${categoryLabel}</div>
         <div class="card-row">
           <div class="card-phones">
-            <div class="phone-item"><small class="muted">Phone</small><div class="phone-value">${teacher.phone}</div></div>
+            <div class="phone-item"><small class="muted">Phone</small><div class="phone-value">${teacher.phone || 'N/A'}</div></div>
           </div>
           <div class="card-actions">
             ${createPhoneActions(teacher.phone, teacher.name)}
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function staffCard(member) {
+  const initials = member.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+  const titleLabel = member.title || "Staff";
+  return `
+    <article class="contact-card" data-name="${member.name}">
+      <div class="avatar" aria-hidden="true">${initials}</div>
+      <div class="card-body">
+        <div class="card-title">${member.name}</div>
+        <div class="card-meta">${titleLabel}</div>
+        <div class="card-row">
+          <div class="card-phones">
+            <div class="phone-item"><small class="muted">Phone</small><div class="phone-value">${member.phone || 'N/A'}</div></div>
+          </div>
+          <div class="card-actions">
+            ${createPhoneActions(member.phone, member.name)}
           </div>
         </div>
       </div>
@@ -725,6 +760,22 @@ function normalizeClassValue(rawClass) {
   }
 
   return cleaned.toUpperCase();
+}
+
+function getTeacherCategory(subject) {
+  if (!subject) return "Other";
+  const normalized = subject.toLowerCase();
+  if (normalized.includes("class teacher")) return "Class Teacher";
+  if (normalized.includes("subject teacher")) return "Subject Teacher";
+  if (normalized.includes("vice principal")) return "Vice Principal";
+  if (normalized.includes("principal")) return "Principal";
+  return "Other";
+}
+
+function extractTeacherClass(subject) {
+  if (!subject) return null;
+  const match = subject.match(/Class Teacher[- ]?(.+)/i);
+  return match ? match[1].trim() : null;
 }
 
 function formatClassLabel(rawClass) {
@@ -764,21 +815,58 @@ function getClassOptions() {
 }
 
 function renderDirectory() {
-  const isAdmin = currentUserRole === "admin";
-  const section = isAdmin ? activeSection : "students";
-  const source = section === "students" ? students : teachers;
-  const badgeLabel = section === "students" ? "Students" : "Teachers";
+  const section = activeSection;
+  let source = section === "students" ? students : section === "teachers" ? teachers : staff;
+  
+  // Sort teachers: class teachers first (sorted by class), then principal, vice principal, subject teachers, others
+  if (section === "teachers") {
+    source = [...source].sort((a, b) => {
+      const catA = getTeacherCategory(a.subject);
+      const catB = getTeacherCategory(b.subject);
+      
+      // Priority order: Principal → Vice Principal → Class Teacher (sorted by class) → Subject Teacher → Other
+      const priority = {
+        "Principal": 1,
+        "Vice Principal": 2,
+        "Class Teacher": 3,
+        "Subject Teacher": 4,
+        "Other": 5
+      };
+      
+      if (priority[catA] !== priority[catB]) {
+        return priority[catA] - priority[catB];
+      }
+      
+      // If both are class teachers, sort by class
+      if (catA === "Class Teacher") {
+        const classA = extractTeacherClass(a.subject);
+        const classB = extractTeacherClass(b.subject);
+        const keyA = classA ? getClassSortKey(classA) : [99, 0];
+        const keyB = classB ? getClassSortKey(classB) : [99, 0];
+        return keyA[0] - keyB[0] || keyA[1] - keyB[1];
+      }
+      
+      // Otherwise, sort by name
+      return a.name.localeCompare(b.name);
+    });
+  }
+  
+  const badgeLabel = section === "students" ? "Students" : section === "teachers" ? "Teachers" : "Staff";
   const filtered = source.filter(item => {
-    // text search match
     if (!matchesSearch(item)) return false;
-    // class filter (only for students)
     if (section === 'students' && activeClassFilter) {
       return normalizeClassValue(item.class) === activeClassFilter;
     }
+    if (section === 'teachers' && activeSectionFilter) {
+      return getTeacherCategory(item.subject) === activeSectionFilter;
+    }
+    if (section === 'staff' && activeSectionFilter) {
+      return item.title === activeSectionFilter;
+    }
     return true;
   });
-  const title = section === "students" ? "Students" : "Teachers";
-  const eyebrow = section === "students" ? "Student List" : "Teacher List";
+  const title = section === "students" ? "Students" : section === "teachers" ? "Teachers" : "Staff";
+  const eyebrow = section === "students" ? "Student List" : section === "teachers" ? "Teacher List" : "Staff Directory";
 
   sectionTitle.textContent = title;
   activeEyebrow.textContent = eyebrow;
@@ -788,13 +876,31 @@ function renderDirectory() {
     badgeLabelElement.textContent = badgeLabel;
   }
   updateSearchUI(section, filtered.length);
-  directoryGrid.innerHTML = filtered.map(item => section === "students" ? studentCard(item) : teacherCard(item)).join("");
+  directoryGrid.innerHTML = filtered.map(item => {
+    if (section === "students") return studentCard(item);
+    if (section === "teachers") return teacherCard(item);
+    return staffCard(item);
+  }).join("");
   emptyState.classList.toggle("hidden", filtered.length !== 0);
   directoryGrid.classList.toggle("hidden", filtered.length === 0);
-  // show/hide class filter depending on active section
+
   if (classFilter) {
     classFilter.style.display = section === 'students' ? '' : 'none';
   }
+  if (sectionFilter) {
+    sectionFilter.style.display = section === 'teachers' || section === 'staff' ? '' : 'none';
+  }
+}
+
+function getTeacherFilterOptions() {
+  return Array.from(new Set(teachers.map(teacher => getTeacherCategory(teacher.subject))))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function getStaffFilterOptions() {
+  return Array.from(new Set(staff.map(member => member.title || "Other")))
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
 }
 
 function populateClassFilter() {
@@ -804,16 +910,27 @@ function populateClassFilter() {
   classFilter.value = activeClassFilter || '';
 }
 
+function populateSectionFilter(section) {
+  if (!sectionFilter) return;
+  let options = ['<option value="">All types</option>'];
+  if (section === 'teachers') {
+    options = options.concat(getTeacherFilterOptions().map(type => `<option value="${type}">${type}</option>`));
+  } else if (section === 'staff') {
+    options = options.concat(getStaffFilterOptions().map(title => `<option value="${title}">${title}</option>`));
+  }
+  sectionFilter.innerHTML = options.join('');
+  sectionFilter.value = activeSectionFilter || '';
+}
+
 function setActiveSection(section) {
-  if (currentUserRole !== "admin") {
-    activeSection = "students";
-    renderDirectory();
+  if (currentUserRole !== "admin" && section === 'staff') {
     return;
   }
   activeSection = section;
   document.querySelectorAll("[data-section]").forEach(button => {
     button.classList.toggle("active", button.dataset.section === section);
   });
+  populateSectionFilter(section);
   renderDirectory();
 }
 
@@ -915,6 +1032,15 @@ if (classFilter) {
   });
 }
 
+if (sectionFilter) {
+  sectionFilter.addEventListener('change', (e) => {
+    activeSectionFilter = e.target.value;
+    renderDirectory();
+  });
+}
+
+
+
 if (searchClearBtn) {
   searchClearBtn.addEventListener("click", () => {
     searchTerm = "";
@@ -938,6 +1064,8 @@ if (searchInput) {
     renderDirectory();
   });
 }
+
+
 
 document.addEventListener("click", event => {
   const sectionButton = event.target.closest("[data-section]");
