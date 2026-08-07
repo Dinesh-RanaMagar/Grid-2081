@@ -134,6 +134,7 @@ function loadPositions() {
                     merged.x = clamp(Number(merged.x) || 0, 0, CERT_W_MM);
                     merged.y = clamp(Number(merged.y) || 0, 0, CERT_H_MM);
                     merged.fontSize = Math.max(6, Number(merged.fontSize) || 14);
+                    merged.fontWeight = (merged.fontWeight === 'normal') ? 'normal' : 'bold';
                     positions[k] = merged;
                 }
             });
@@ -328,7 +329,7 @@ function drawTextLayer(ctx, pxPerMm) {
         const yPx  = (p.y + GLOBAL_Y_OFFSET + globalYOffset) * pxPerMm;
         const fs   = Math.max(6, Number(p.fontSize) || 14);
         const fStyle = (p.fontStyle  === 'italic') ? 'italic' : 'normal';
-        const fWt    = (p.fontWeight === 'bold')   ? '700'    : '400';
+        const fWt    = (p.fontWeight === 'normal') ? '400' : '700';
         const fFam   = p.fontFamily || 'Times New Roman';
         const fontPx = fs * pxPerMm / (96 / 25.4);
 
