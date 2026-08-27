@@ -605,8 +605,8 @@ const teachers = [
   {
     name: "Jitnarayan Mahato",
     subject: "Class Teacher-8B",
-    phone: "",
-    password: ""
+    phone: "9847515747",
+    password: "9847515747"
   },
   {
     name: "Tika Chapagain",
@@ -658,8 +658,8 @@ const teachers = [
   {
     name: "Dhana Sapkota",
     subject: "Class Teacher-NUR",
-    phone: "",
-    password: ""
+    phone: "9807546738",
+    password: "9807546738"
   }
 ];
 
