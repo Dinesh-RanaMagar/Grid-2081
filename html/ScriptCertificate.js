@@ -30,13 +30,23 @@ let globalYOffset = 0;
 // CSS size = CERT_W_MM mm × CERT_H_MM mm  ×  currentZoom
 // so the preview matches real paper exactly at zoom=1.
 
-const LS_POSITIONS       = 'tcPositions_v6';
-const LS_STUDENT         = 'tcStudentData_v2';
-const LS_IMAGE           = 'tcCertificateImage';
-const LS_ZOOM            = 'tcZoom';
-const LS_ROTATION        = 'tcRotation';
-const LS_GLOBAL_X_OFFSET = 'tcGlobalXOffset_v2';
-const LS_GLOBAL_Y_OFFSET = 'tcGlobalYOffset_v2';
+const LS_POSITIONS       = 'janajyoti:certificate:v1:positions';
+const LS_STUDENT         = 'janajyoti:certificate:v1:student-data';
+const LS_IMAGE           = 'janajyoti:certificate:v1:background-image';
+const LS_ZOOM            = 'janajyoti:certificate:v1:zoom';
+const LS_ROTATION        = 'janajyoti:certificate:v1:rotation';
+const LS_GLOBAL_X_OFFSET = 'janajyoti:certificate:v1:global-x-offset';
+const LS_GLOBAL_Y_OFFSET = 'janajyoti:certificate:v1:global-y-offset';
+const LEGACY_STORAGE_KEYS = {
+    [LS_POSITIONS]: 'tcPositions_v6',
+    [LS_STUDENT]: 'tcStudentData_v2',
+    [LS_IMAGE]: 'tcCertificateImage',
+    [LS_ZOOM]: 'tcZoom',
+    [LS_ROTATION]: 'tcRotation',
+    [LS_GLOBAL_X_OFFSET]: 'tcGlobalXOffset_v2',
+    [LS_GLOBAL_Y_OFFSET]: 'tcGlobalYOffset_v2'
+};
+let storageNoticeShown = false;
 
 const ROTATION_STEPS = [0, 90, 180, 270];
 
@@ -117,13 +127,51 @@ function $(id) { return document.getElementById(id); }
 // ----------------------------------------------------------
 // LOCAL STORAGE
 // ----------------------------------------------------------
+function reportStorageError(message, error) {
+    console.error('[Certificate] Browser storage operation failed.', error);
+    if (storageNoticeShown) return;
+    storageNoticeShown = true;
+    showStatus(message, 'error');
+}
+
+function readStoredValue(key) {
+    try {
+        const currentValue = localStorage.getItem(key);
+        if (currentValue !== null) return currentValue;
+
+        const legacyKey = LEGACY_STORAGE_KEYS[key];
+        if (!legacyKey) return null;
+        const legacyValue = localStorage.getItem(legacyKey);
+        if (legacyValue === null) return null;
+
+        try {
+            localStorage.setItem(key, legacyValue);
+            localStorage.removeItem(legacyKey);
+        } catch (error) {
+            reportStorageError('Saved certificate data could not be migrated. Your latest changes may not persist.', error);
+        }
+        return legacyValue;
+    } catch (error) {
+        reportStorageError('Saved certificate data could not be read. Your latest changes may not persist.', error);
+        return null;
+    }
+}
+
+function writeStoredValue(key, value) {
+    try {
+        localStorage.setItem(key, value);
+    } catch (error) {
+        reportStorageError('Browser storage is full or unavailable. Your latest certificate changes may not persist.', error);
+    }
+}
+
 function savePositions() {
-    try { localStorage.setItem(LS_POSITIONS, JSON.stringify(positions)); } catch(e) {}
+    writeStoredValue(LS_POSITIONS, JSON.stringify(positions));
 }
 
 function loadPositions() {
     try {
-        const raw = localStorage.getItem(LS_POSITIONS);
+        const raw = readStoredValue(LS_POSITIONS);
         if (raw) {
             const parsed = JSON.parse(raw);
             // merge: keep defaults for any missing keys
@@ -140,16 +188,19 @@ function loadPositions() {
             });
             savePositions();
         }
-    } catch(e) { positions = deepClone(DEFAULT_POSITIONS); }
+    } catch(error) {
+        reportStorageError('Saved certificate positions are invalid. Default positions are being used.', error);
+        positions = deepClone(DEFAULT_POSITIONS);
+    }
 }
 
 function saveStudentData() {
-    try { localStorage.setItem(LS_STUDENT, JSON.stringify(studentData)); } catch(e) {}
+    writeStoredValue(LS_STUDENT, JSON.stringify(studentData));
 }
 
 function loadStudentData() {
     try {
-        const raw = localStorage.getItem(LS_STUDENT);
+        const raw = readStoredValue(LS_STUDENT);
         if (raw) {
             studentData = JSON.parse(raw);
             Object.keys(studentData).forEach(k => {
@@ -157,39 +208,37 @@ function loadStudentData() {
                 if (el) el.value = studentData[k] || '';
             });
         }
-    } catch(e) {}
-    try {
-        const img = localStorage.getItem(LS_IMAGE);
-        if (img) certImageDataUrl = img;
-    } catch(e) {}
-    try {
-        const z = parseFloat(localStorage.getItem(LS_ZOOM));
-        if (!isNaN(z) && z >= 0.25 && z <= 4) currentZoom = z;
-    } catch(e) {}
+    } catch(error) {
+        reportStorageError('Saved certificate information is invalid and could not be restored.', error);
+    }
+    const image = readStoredValue(LS_IMAGE);
+    if (image) certImageDataUrl = image;
+    const zoom = parseFloat(readStoredValue(LS_ZOOM));
+    if (!isNaN(zoom) && zoom >= 0.25 && zoom <= 4) currentZoom = zoom;
 }
 
 function saveZoom() {
-    try { localStorage.setItem(LS_ZOOM, String(currentZoom)); } catch(e) {}
+    writeStoredValue(LS_ZOOM, String(currentZoom));
 }
 
 function saveRotation() {
-    try { localStorage.setItem(LS_ROTATION, String(currentRotation)); } catch(e) {}
+    writeStoredValue(LS_ROTATION, String(currentRotation));
 }
 
 function saveGlobalOffsets() {
-    try {
-        localStorage.setItem(LS_GLOBAL_X_OFFSET, String(globalXOffset));
-        localStorage.setItem(LS_GLOBAL_Y_OFFSET, String(globalYOffset));
-    } catch(e) {}
+    writeStoredValue(LS_GLOBAL_X_OFFSET, String(globalXOffset));
+    writeStoredValue(LS_GLOBAL_Y_OFFSET, String(globalYOffset));
 }
 
 function loadGlobalOffsets() {
     try {
-        const x = parseFloat(localStorage.getItem(LS_GLOBAL_X_OFFSET));
+        const x = parseFloat(readStoredValue(LS_GLOBAL_X_OFFSET));
         if (!isNaN(x)) globalXOffset = x;
-        const y = parseFloat(localStorage.getItem(LS_GLOBAL_Y_OFFSET));
+        const y = parseFloat(readStoredValue(LS_GLOBAL_Y_OFFSET));
         if (!isNaN(y)) globalYOffset = y;
-    } catch(e) {}
+    } catch(error) {
+        reportStorageError('Saved certificate offsets could not be read.', error);
+    }
     updateGlobalOffsetInputs();
 }
 
@@ -202,9 +251,11 @@ function updateGlobalOffsetInputs() {
 
 function loadRotation() {
     try {
-        const r = parseInt(localStorage.getItem(LS_ROTATION), 10);
+        const r = parseInt(readStoredValue(LS_ROTATION), 10);
         if (ROTATION_STEPS.includes(r)) currentRotation = r;
-    } catch(e) {}
+    } catch(error) {
+        reportStorageError('Saved certificate rotation could not be read.', error);
+    }
 }
 
 // ----------------------------------------------------------
@@ -757,17 +808,25 @@ function setAllFontWeight(fontWeight) {
 // EXPORT / IMPORT POSITIONS
 // ----------------------------------------------------------
 function exportPositions() {
-    const data = JSON.stringify(positions, null, 2);
-    const blob = new Blob([data], { type: 'application/json' });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href     = url;
-    a.download = 'tc_positions.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showStatus('💾 Positions exported', 'success');
+    let url = null;
+    let link = null;
+    try {
+        const data = JSON.stringify(positions, null, 2);
+        const blob = new Blob([data], { type: 'application/json' });
+        url = URL.createObjectURL(blob);
+        link = document.createElement('a');
+        link.href = url;
+        link.download = 'tc_positions.json';
+        document.body.appendChild(link);
+        link.click();
+        showStatus('💾 Positions exported', 'success');
+    } catch (error) {
+        console.error('[Certificate] Could not export field positions.', error);
+        showStatus('❌ Could not export positions. Please try again.', 'error');
+    } finally {
+        if (link) link.remove();
+        if (url) URL.revokeObjectURL(url);
+    }
 }
 
 function importPositions(e) {
@@ -789,6 +848,10 @@ function importPositions(e) {
         } catch(err) {
             showStatus('❌ Invalid JSON file', 'error');
         }
+    };
+    reader.onerror = () => {
+        console.error('[Certificate] Could not read the imported positions file.', reader.error);
+        showStatus('❌ Could not read the selected JSON file', 'error');
     };
     reader.readAsText(file);
     e.target.value = ''; // allow re-import of same file
@@ -839,7 +902,7 @@ function handleImageUpload(e) {
     const reader = new FileReader();
     reader.onload = ev => {
         certImageDataUrl = ev.target.result;
-        try { localStorage.setItem(LS_IMAGE, certImageDataUrl); } catch(err) {}
+        writeStoredValue(LS_IMAGE, certImageDataUrl);
         updatePreview();
         showStatus('✅ Background image loaded', 'success');
     };

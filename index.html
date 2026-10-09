@@ -20,123 +20,7 @@
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Service Worker -->
-  <script defer>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', async () => {
-        try {
-          const registration = await navigator.serviceWorker.register('service-worker.js');
-          console.log('ServiceWorker registered:', registration.scope);
-          listenForUpdates(registration);
-        } catch (err) {
-          console.log('ServiceWorker registration failed:', err);
-        }
-      });
-    }
-
-    let deferredInstallPrompt;
-    const statusToast = document.createElement('div');
-    statusToast.id = 'statusToast';
-    statusToast.className = 'status-toast';
-    statusToast.style.display = 'none';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.appendChild(statusToast);
-      updateNetworkStatus();
-    });
-
-    window.addEventListener('online', updateNetworkStatus);
-    window.addEventListener('offline', updateNetworkStatus);
-
-    window.addEventListener('beforeinstallprompt', event => {
-      event.preventDefault();
-      deferredInstallPrompt = event;
-      showStatus('Install श्री जनज्योति नमूना मा.वि for a better offline experience', 'Install', promptInstall);
-    });
-
-    function listenForUpdates(registration) {
-      if (registration.waiting) {
-        showUpdateReady();
-        return;
-      }
-
-      registration.addEventListener('updatefound', () => {
-        const installingWorker = registration.installing;
-        if (!installingWorker) return;
-        installingWorker.addEventListener('statechange', () => {
-          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            showUpdateReady();
-          }
-        });
-      });
-
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        window.location.reload();
-      });
-    }
-
-    function sendSWMessage(message) {
-      if (navigator.serviceWorker.controller) {
-        navigator.serviceWorker.controller.postMessage(message);
-      }
-    }
-
-    function showStatus(message, buttonLabel = null, buttonAction = null, visibleMs = 6000) {
-      statusToast.innerHTML = '';
-      const text = document.createElement('span');
-      text.textContent = message;
-      statusToast.appendChild(text);
-
-      if (buttonLabel && buttonAction) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = buttonLabel;
-        button.addEventListener('click', buttonAction);
-        statusToast.appendChild(button);
-      }
-
-      statusToast.style.display = 'flex';
-      statusToast.classList.add('status-toast--visible');
-      clearTimeout(statusToast.dismissTimeout);
-
-      if (visibleMs > 0) {
-        statusToast.dismissTimeout = setTimeout(() => {
-          hideStatus();
-        }, visibleMs);
-      }
-    }
-
-    function hideStatus() {
-      statusToast.style.display = 'none';
-      statusToast.classList.remove('status-toast--visible');
-    }
-
-    function updateNetworkStatus() {
-      if (navigator.onLine) {
-        showStatus('You are online', null, null, 3000);
-      } else {
-        showStatus('You are offline. Cached pages are still available.', null, null, 10000);
-      }
-    }
-
-    function showUpdateReady() {
-      showStatus('A new version is available', 'Reload', () => {
-        sendSWMessage({ type: 'SKIP_WAITING' });
-      }, 0);
-    }
-
-    async function promptInstall() {
-      if (!deferredInstallPrompt) return;
-      deferredInstallPrompt.prompt();
-      const choice = await deferredInstallPrompt.userChoice;
-      if (choice.outcome === 'accepted') {
-        showStatus('Installation started', null, null, 4000);
-      } else {
-        showStatus('Installation dismissed', null, null, 4000);
-      }
-      deferredInstallPrompt = null;
-    }
-  </script>
+  <script src="/js/pwa.js" defer></script>
 
   <!-- Analytics -->
   <script defer>
@@ -444,11 +328,31 @@
     /* Theme toggling */
     const themeToggleBtn = qs('#themeToggle');
     const rootEl = document.documentElement;
-    const storedTheme = localStorage.getItem('grid2081-theme');
+    const THEME_KEY = 'janajyoti:theme:v1';
+    let storedTheme = null;
+
+    try {
+      storedTheme = localStorage.getItem(THEME_KEY);
+      if (!storedTheme) {
+        const legacyTheme = localStorage.getItem('grid2081-theme');
+        if (legacyTheme === 'light' || legacyTheme === 'dark') {
+          localStorage.setItem(THEME_KEY, legacyTheme);
+          localStorage.removeItem('grid2081-theme');
+          storedTheme = legacyTheme;
+        }
+      }
+    } catch (error) {
+      console.error('The selected theme could not be read from browser storage.', error);
+    }
 
     const applyTheme = (theme) => {
       rootEl.setAttribute('data-theme', theme);
-      localStorage.setItem('grid2081-theme', theme);
+      try {
+        localStorage.setItem(THEME_KEY, theme);
+      } catch (error) {
+        console.error('The selected theme could not be saved to browser storage.', error);
+      }
+      if (!themeToggleBtn) return;
       const icon = themeToggleBtn.querySelector('i');
       const text = themeToggleBtn.querySelector('.theme-toggle-text');
       
@@ -470,7 +374,7 @@
 
     applyTheme(storedTheme || 'light');
 
-    themeToggleBtn.addEventListener('click', toggleTheme);
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
 
     /* Mobile menu */
     const navToggle = qs('#navToggle');
@@ -698,6 +602,7 @@
     fetch('articles.json')
       .then(res => res.json())
       .then(data => {
+        if (!Array.isArray(data)) throw new TypeError('The news response is not a list.');
         articles = data;
         showArticles(currentIndex);
 
@@ -714,6 +619,15 @@
             showArticles(currentIndex);
           }
         });
+      })
+      .catch(error => {
+        console.error('Homepage news could not be loaded.', error);
+        const container = qs('#news-container');
+        if (container) container.textContent = 'News could not be loaded. Please try again when you are online.';
+        const previousButton = qs('#prev-button');
+        const nextButton = qs('#next-button');
+        if (previousButton) previousButton.hidden = true;
+        if (nextButton) nextButton.hidden = true;
       });
 
     /* Social media warning */
@@ -785,7 +699,7 @@
               <a href="html/specificgrid.html" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500;">
                 <i class="fas fa-book"></i> Curriculum
               </a>
-              <a href="html/contact.html" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500;">
+              <a href="html/Contact.html" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500;">
                 <i class="fas fa-address-book"></i> Contacts
               </a>
               <button id="fabThemeToggle" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; width: 100%;">

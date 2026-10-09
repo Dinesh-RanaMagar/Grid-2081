@@ -2,335 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Curriculum – श्री जनज्योति नमूना मा.वि</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1437">
+  <title>Contact Us – श्री जनज्योति नमूना मा.वि</title>
+  <meta name="description" content="Contact श्री जनज्योति नमूना मा.वि and find school information.">
+  <link rel="canonical" href="https://janajyoti.netlify.app/html/Contact.html">
+  <meta property="og:title" content="Contact Us – श्री जनज्योति नमूना मा.वि">
+  <meta property="og:description" content="Contact श्री जनज्योति नमूना मा.वि and find school information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://janajyoti.netlify.app/html/Contact.html">
   <link rel="icon" href="../image/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../css/class-page.css">
+  <script src="/js/pwa.js" defer></script>
+  <style>
+    .contact-navigation { margin-top: 70px; padding: 12px 20px; background: #fff; }
+    .contact-navigation summary { cursor: pointer; font-weight: 600; }
+    .contact-navigation__links { display: flex; flex-wrap: wrap; gap: 10px 16px; padding-top: 12px; }
+    .contact-navigation__links a { color: #1a2f6e; text-decoration: underline; text-underline-offset: 3px; }
+    .contact-login { max-width: 560px; margin: 36px auto; padding: 24px; }
+    .contact-login label { display: block; margin: 14px 0 6px; font-weight: 600; }
+    .contact-login input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #8993a7; border-radius: 8px; font: inherit; }
+    .contact-login input:focus-visible, .contact-login button:focus-visible, .contact-navigation a:focus-visible, .contact-navigation summary:focus-visible { outline: 3px solid #4f8bf9; outline-offset: 3px; }
+    .contact-login button { min-height: 46px; margin-top: 18px; padding: 10px 18px; border: 0; border-radius: 8px; background: #4f8bf9; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    .contact-access-notice { line-height: 1.6; }
+    .login-message--error { color: #a11; font-weight: 600; }
+    .breadcrumb { padding: 10px 20px; font-size: .9rem; }
+    .page-hero { margin-top: 0; }
+    @media (max-width: 600px) { .contact-login { margin: 24px 16px; } }
+  </style>
 </head>
 <body>
-
   <header class="topbar">
-    <img src="../image/logo.png" alt="Logo" class="topbar__logo">
+    <img src="../image/logo.png" alt="श्री जनज्योति नमूना मा.वि logo" class="topbar__logo">
     <span class="topbar__title">श्री जनज्योति नमूना मा.वि</span>
-    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Home</a>
-      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left" aria-hidden="true"></i> Home</a>
   </header>
 
-  <div class="menu-overlay" id="menuOverlay"></div>
-  <nav class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-    </ul>
-    
-    <div class="menu-section">
-      <div class="menu-section-title" onclick="toggleSection('classes')">
-        <span><i class="fas fa-graduation-cap"></i> Classes</span>
-        <i class="fas fa-chevron-down"></i>
+  <nav class="contact-navigation" aria-label="Main navigation">
+    <details>
+      <summary>Browse the school site</summary>
+      <div class="contact-navigation__links">
+        <a href="../index.html">Home</a>
+        <a href="./nur.html">Nursery</a>
+        <a href="./kg.html">KG</a>
+        <a href="./class1.html">Class 1</a>
+        <a href="./class2.html">Class 2</a>
+        <a href="./class3.html">Class 3</a>
+        <a href="./class4.html">Class 4</a>
+        <a href="./class5.html">Class 5</a>
+        <a href="./class6.html">Class 6</a>
+        <a href="./class7.html">Class 7</a>
+        <a href="./class8.html">Class 8</a>
+        <a href="./class9.html">Class 9</a>
+        <a href="./class10.html">Class 10</a>
+        <a href="../TeacherGuidebook/html/class1.html">Teacher Guide 1</a>
+        <a href="../TeacherGuidebook/html/class2.html">Teacher Guide 2</a>
+        <a href="../TeacherGuidebook/html/class3.html">Teacher Guide 3</a>
+        <a href="../TeacherGuidebook/html/class4.html">Teacher Guide 4</a>
+        <a href="../TeacherGuidebook/html/class5.html">Teacher Guide 5</a>
+        <a href="../TeacherGuidebook/html/class6.html">Teacher Guide 6</a>
+        <a href="../TeacherGuidebook/html/class7.html">Teacher Guide 7</a>
+        <a href="../TeacherGuidebook/html/class8.html">Teacher Guide 8</a>
+        <a href="../TeacherGuidebook/html/class9.html">Teacher Guide 9</a>
+        <a href="../TeacherGuidebook/html/class10.html">Teacher Guide 10</a>
+        <a href="./specificgrid.html">Curriculum</a>
+        <a href="./Certificate.html">Certificate</a>
+        <a href="https://ictmis.mycemserp.com/Teacher/" target="_blank" rel="noopener noreferrer">Teacher Login</a>
+        <a href="https://ictmis.mycemserp.com/Student" target="_blank" rel="noopener noreferrer">Student Login</a>
       </div>
-      <div class="menu-section-content" id="classes">
-        <ul>
-          <li><a href="../html/nur.html">Nursery</a></li>
-          <li><a href="../html/kg.html">KG</a></li>
-          <li><a href="../html/class1.html">Class 1</a></li>
-          <li><a href="../html/class2.html">Class 2</a></li>
-          <li><a href="../html/class3.html">Class 3</a></li>
-          <li><a href="../html/class4.html">Class 4</a></li>
-          <li><a href="../html/class5.html">Class 5</a></li>
-          <li><a href="../html/class6.html">Class 6</a></li>
-          <li><a href="../html/class7.html">Class 7</a></li>
-          <li><a href="../html/class8.html">Class 8</a></li>
-          <li><a href="../html/class9.html">Class 9</a></li>
-          <li><a href="../html/class10.html">Class 10</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="menu-section">
-      <div class="menu-section-title" onclick="toggleSection('teacher-guide')">
-        <span><i class="fas fa-chalkboard-teacher"></i> Teacher Guide</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="menu-section-content" id="teacher-guide">
-        <ul>
-          <li><a href="../TeacherGuidebook/html/class1.html">Class 1</a></li>
-          <li><a href="../TeacherGuidebook/html/class2.html">Class 2</a></li>
-          <li><a href="../TeacherGuidebook/html/class3.html">Class 3</a></li>
-          <li><a href="../TeacherGuidebook/html/class4.html">Class 4</a></li>
-          <li><a href="../TeacherGuidebook/html/class5.html">Class 5</a></li>
-          <li><a href="../TeacherGuidebook/html/class6.html">Class 6</a></li>
-          <li><a href="../TeacherGuidebook/html/class7.html">Class 7</a></li>
-          <li><a href="../TeacherGuidebook/html/class8.html">Class 8</a></li>
-          <li><a href="../TeacherGuidebook/html/class9.html">Class 9</a></li>
-          <li><a href="../TeacherGuidebook/html/class10.html">Class 10</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <ul>
-      <li><a href="../html/specificgrid.html"><i class="fas fa-book"></i> Curriculum</a></li>
-      <li><a href="../html/Contact.html"><i class="fas fa-address-book"></i> Contacts</a></li>
-      <li><a href="https://ictmis.mycemserp.com/Teacher/" target="_blank"><i class="fas fa-user-tie"></i> Teacher Login</a></li>
-      <li><a href="https://ictmis.mycemserp.com/Student" target="_blank"><i class="fas fa-user-graduate"></i> Student Login</a></li>
-    </ul>
+    </details>
+  </nav>
+
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <a href="../index.html">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Contact Us</span>
   </nav>
 
   <section class="page-hero">
     <h1 class="page-hero__title">Contact Us</h1>
-    <p class="page-hero__sub">Teachers see student numbers only. Users can switch between student, teacher, and staff contacts.</p>
- 
+    <p class="page-hero__sub">School contact information and secure directory access</p>
   </section>
 
-  <div id="loginView" class="login-view">
-    <section class="login-card">
-      <h2>Login to access Contacts</h2>
-      <p class="login-instruction">Enter your phone number and password to continue.</p>
-      <form id="loginForm">
+  <main>
+    <section class="content-card contact-login" aria-labelledby="contact-login-heading">
+      <h2 id="contact-login-heading">Login to access contacts</h2>
+      <p class="contact-access-notice">This site is static and does not have a secure contacts authentication service. No student, teacher, or staff directory records are stored or served here. Please contact the school office for access.</p>
+      <form id="contactLoginForm" method="post">
         <label for="phoneInput">Phone number</label>
-        <input id="phoneInput" type="tel" placeholder="9800000000" required autocomplete="tel">
+        <input id="phoneInput" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
 
         <label for="passwordInput">Password</label>
-        <input id="passwordInput" type="password" placeholder="Password" required autocomplete="current-password">
+        <input id="passwordInput" name="password" type="password" autocomplete="current-password" required>
 
-        <button class="btn-login" type="submit">Login</button>
+        <button type="submit" disabled>Login</button>
       </form>
-      <p id="loginMessage" class="login-message"></p>
+      <p id="contactLoginMessage" class="login-message" role="status" aria-live="polite"></p>
     </section>
-  </div>
-
-  <div id="dashboardView" class="hidden">
-    <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true">
-      <div class="loader" aria-hidden="true"></div>
-    </div>
-
-    <main class="dashboard-container">
-      <section class="teacher-greeting" id="teacherGreeting" aria-live="polite"></section>
-
-      <section class="search-toolbar" aria-label="Student search">
-        <div class="search-box modern search-box--dashboard">
-          <div class="search-box__field">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input id="searchInput" type="search" placeholder="Search students by name, class, or ID" aria-label="Search students by name, class, or ID" autocomplete="off" spellcheck="false">
-            <button class="search-clear" id="searchClearBtn" type="button" aria-label="Clear search" hidden>
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="search-hint" id="searchHint" aria-live="polite">Search students by name, class, or ID.</div>
-        </div>
-      </section>
-
-      <section class="controls-row">
-        <div class="left-controls">
-          <div class="section-tabs" id="sectionTabs" role="tablist" aria-label="Contact sections">
-            <button class="section-tab active" type="button" data-section="students">Students</button>
-            <button class="section-tab" type="button" data-section="teachers">Teachers</button>
-            <button class="section-tab" type="button" data-section="staff">Staff</button>
-          </div>
-          <select id="classFilter" class="class-filter modern" aria-label="Filter by class">
-            <option value="">All classes</option>
-          </select>
-          <select id="sectionFilter" class="class-filter modern" aria-label="Filter by type" style="display:none; margin-left:0.75rem;">
-            <option value="">All types</option>
-          </select>
-        </div>
-        <div class="right-controls">
-          <div class="result-summary" aria-live="polite" aria-atomic="true">
-            <span class="result-summary__icon"><i class="fas fa-layer-group"></i></span>
-            <div class="result-summary__text">
-              <span class="result-summary__count" id="resultCount">25</span>
-              <span class="badge-label">Contacts</span>
-            </div>
-          </div>
-          <button class="logout-btn" id="logoutBtn" type="button"><i class="fas fa-sign-out-alt"></i> Logout</button>
-        </div>
-      </section>
-
-      <section class="content-card modern-card">
-        <div class="content-heading">
-          <div>
-            <span class="eyebrow" id="activeEyebrow">Student List</span>
-            <h2 id="sectionTitle">Students</h2>
-          </div>
-        </div>
-
-        <div class="directory-grid" id="directoryGrid" aria-live="polite">
-          <table class="contact-table" style="width:100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background:#f3f4f6; text-align:left;">
-                <th style="padding:8px; border:1px solid #e5e7eb; width:6%">S.N</th>
-                <th style="padding:8px; border:1px solid #e5e7eb;">Full Name</th>
-                <th style="padding:8px; border:1px solid #e5e7eb; width:8%">Class</th>
-                <th style="padding:8px; border:1px solid #e5e7eb;">Address</th>
-                <th style="padding:8px; border:1px solid #e5e7eb; width:14%">Ph. Number</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">1</td><td style="padding:8px; border:1px solid #e5e7eb;">Amir Bishwokarma</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-10</td><td style="padding:8px; border:1px solid #e5e7eb;">9811954067</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">2</td><td style="padding:8px; border:1px solid #e5e7eb;">Amrit Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821957790</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">3</td><td style="padding:8px; border:1px solid #e5e7eb;">Bhumika Sunari Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9876435611</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">4</td><td style="padding:8px; border:1px solid #e5e7eb;">Bijaya Kafle</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9815439495</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Bipsana Thapa</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9841413062</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">6</td><td style="padding:8px; border:1px solid #e5e7eb;">Ghanishta Sunar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9804436745</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">7</td><td style="padding:8px; border:1px solid #e5e7eb;">Kushal Ranabhat</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9825762299</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">8</td><td style="padding:8px; border:1px solid #e5e7eb;">Manisha Tumsing</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9768375112</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">9</td><td style="padding:8px; border:1px solid #e5e7eb;">Mausam Maski Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9743480615</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">10</td><td style="padding:8px; border:1px solid #e5e7eb;">Nikesh Kanhug Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821059262</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">11</td><td style="padding:8px; border:1px solid #e5e7eb;">Parbati Kumal</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9821440979</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">12</td><td style="padding:8px; border:1px solid #e5e7eb;">Prakash Sapkota</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9867836951</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">13</td><td style="padding:8px; border:1px solid #e5e7eb;">Prayas Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9860299147</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">14</td><td style="padding:8px; border:1px solid #e5e7eb;">Puja Thapa Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9811556213</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">15</td><td style="padding:8px; border:1px solid #e5e7eb;">Sabin B.K</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9764537090</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">16</td><td style="padding:8px; border:1px solid #e5e7eb;">Samjhana Gharti Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9704208541</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">17</td><td style="padding:8px; border:1px solid #e5e7eb;">Smile Nepali</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9867111056</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">18</td><td style="padding:8px; border:1px solid #e5e7eb;">Soniya Sherstha</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9805108943</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">19</td><td style="padding:8px; border:1px solid #e5e7eb;">Sophia Sunar</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9805455751</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">20</td><td style="padding:8px; border:1px solid #e5e7eb;">Subin Tamang</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9825493490</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">21</td><td style="padding:8px; border:1px solid #e5e7eb;">Sulav B.K</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9855055505</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">22</td><td style="padding:8px; border:1px solid #e5e7eb;">Sushila Ranabhat</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9867043303</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">23</td><td style="padding:8px; border:1px solid #e5e7eb;">Sushma Tamang</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9806549440</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">24</td><td style="padding:8px; border:1px solid #e5e7eb;">Umanga Thada</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9825483438</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">25</td><td style="padding:8px; border:1px solid #e5e7eb;">Unisha Bk</td><td style="padding:8px; border:1px solid #e5e7eb;">5</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9708570683</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">26</td><td style="padding:8px; border:1px solid #e5e7eb;">Anshu Rai</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9843910043</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">27</td><td style="padding:8px; border:1px solid #e5e7eb;">Asbina Rana Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9765397890</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">28</td><td style="padding:8px; border:1px solid #e5e7eb;">Asim Bista Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9843203802</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">29</td><td style="padding:8px; border:1px solid #e5e7eb;">Bibisa Ghimire</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9867693541</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">30</td><td style="padding:8px; border:1px solid #e5e7eb;">Bishal Sunar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9812962521</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">31</td><td style="padding:8px; border:1px solid #e5e7eb;">Bishnu Sing Konwar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9827563612</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">32</td><td style="padding:8px; border:1px solid #e5e7eb;">Himal Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9716057419</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">33</td><td style="padding:8px; border:1px solid #e5e7eb;">Icchya Barawal</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9820277613</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">34</td><td style="padding:8px; border:1px solid #e5e7eb;">Icchya Bayambu Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9844781584</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">35</td><td style="padding:8px; border:1px solid #e5e7eb;">Jyoti Nepali</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9825482928</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">36</td><td style="padding:8px; border:1px solid #e5e7eb;">Khum Maya Gaha Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9811474867</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">37</td><td style="padding:8px; border:1px solid #e5e7eb;">Kismat Tamang</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9866379956</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">38</td><td style="padding:8px; border:1px solid #e5e7eb;">Kripa Thapa</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9860775502</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">39</td><td style="padding:8px; border:1px solid #e5e7eb;">Krishna Narayan Shrestha</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9845197435</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">40</td><td style="padding:8px; border:1px solid #e5e7eb;">Manisha Rana Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9815401856</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">41</td><td style="padding:8px; border:1px solid #e5e7eb;">Mission Ale</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-12</td><td style="padding:8px; border:1px solid #e5e7eb;">9811358324</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">42</td><td style="padding:8px; border:1px solid #e5e7eb;">Nagma Thapa</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9815146017</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">43</td><td style="padding:8px; border:1px solid #e5e7eb;">Paras Sigdel</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9817499708</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">44</td><td style="padding:8px; border:1px solid #e5e7eb;">Rohit Shrestha</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9806988094</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">45</td><td style="padding:8px; border:1px solid #e5e7eb;">Rosni Sigdel</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9817499708</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">46</td><td style="padding:8px; border:1px solid #e5e7eb;">Samir Soti Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-1</td><td style="padding:8px; border:1px solid #e5e7eb;">9821004372</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">47</td><td style="padding:8px; border:1px solid #e5e7eb;">Samjana Thapa</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9821441017</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">48</td><td style="padding:8px; border:1px solid #e5e7eb;">Santosh Gharti Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9821908273</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">49</td><td style="padding:8px; border:1px solid #e5e7eb;">Shilisa Gaha Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9867492906</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">50</td><td style="padding:8px; border:1px solid #e5e7eb;">Sonisha Pariyar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9867522002</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">51</td><td style="padding:8px; border:1px solid #e5e7eb;">Srijana Saru</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9866472494</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">52</td><td style="padding:8px; border:1px solid #e5e7eb;">Sagarika Dhakal</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9819436190</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">53</td><td style="padding:8px; border:1px solid #e5e7eb;">Susmita Gurung</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-11</td><td style="padding:8px; border:1px solid #e5e7eb;">9860299147</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">54</td><td style="padding:8px; border:1px solid #e5e7eb;">Tara Parsad Wantaki</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9768857595</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">55</td><td style="padding:8px; border:1px solid #e5e7eb;">Tek Bahadur Magar</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-14</td><td style="padding:8px; border:1px solid #e5e7eb;">9825493546</td></tr>
-              <tr><td style="padding:8px; border:1px solid #e5e7eb;">56</td><td style="padding:8px; border:1px solid #e5e7eb;">Yanisha Bk</td><td style="padding:8px; border:1px solid #e5e7eb;">8'A'</td><td style="padding:8px; border:1px solid #e5e7eb;">Devchuli-13</td><td style="padding:8px; border:1px solid #e5e7eb;">9867568764</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="empty-state empty-modern hidden" id="emptyState">
-          <div class="empty-emoji">🔎</div>
-          <h3>No contacts found</h3>
-          <p>Try a different name, class, subject, or phone number.</p>
-        </div>
-      </section>
-    </main>
-  </div>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
+  </main>
 
   <footer class="footer">
     <p>&copy; 2025 Shree Jana Jyoti Namuna Secondary School. All Rights Reserved.</p>
     <div class="footer__social">
-      <a href="https://www.facebook.com/share/1EFB78GBa4/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-      <a href="mailto:jananamuna@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.facebook.com/share/1EFB78GBa4/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+      <a href="mailto:jananamuna@gmail.com" aria-label="Email the school"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </div>
   </footer>
 
-  <!-- Mobile floating action button -->
-  <button class="mobile-fab" aria-label="Quick access menu" id="mobileFab">
-    <i class="fas fa-plus"></i>
-  </button>
-
-  <script>
-    // Mobile FAB functionality
-    const mobileFab = document.getElementById('mobileFab');
-    let fabMenuOpen = false;
-
-    if (mobileFab) {
-      mobileFab.addEventListener('click', () => {
-        if (!fabMenuOpen) {
-          // Show quick access options
-          const quickMenu = document.createElement('div');
-          quickMenu.id = 'fab-menu';
-          quickMenu.style.cssText = `
-            position: fixed;
-            bottom: 100px;
-            left: 28px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.12);
-            padding: 12px;
-            z-index: 49;
-            min-width: 200px;
-            border: 1px solid rgba(0,0,0,.1);
-          `;
-          
-          quickMenu.innerHTML = `
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <a href="../index.html" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: #4f8bf9; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500;">
-                <i class="fas fa-home"></i> Home
-              </a>
-              <a href="../html/class1.html" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: #4f8bf9; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500;">
-                <i class="fas fa-graduation-cap"></i> Classes
-              </a>
-              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="padding: 12px 16px; border-radius: 8px; background: rgba(79, 139, 249, 0.1); color: #4f8bf9; border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; width: 100%;">
-                <i class="fas fa-arrow-up"></i> Scroll to Top
-              </button>
-            </div>
-          `;
-          
-          document.body.appendChild(quickMenu);
-          mobileFab.innerHTML = '<i class="fas fa-times"></i>';
-          fabMenuOpen = true;
-          
-          // Close menu when clicking outside
-          setTimeout(() => {
-            document.addEventListener('click', function closeFabMenu(e) {
-              if (!quickMenu.contains(e.target) && !mobileFab.contains(e.target)) {
-                quickMenu.remove();
-                mobileFab.innerHTML = '<i class="fas fa-plus"></i>';
-                fabMenuOpen = false;
-                document.removeEventListener('click', closeFabMenu);
-              }
-            });
-          }, 100);
-          
-        } else {
-          // Close menu
-          const existingMenu = document.getElementById('fab-menu');
-          if (existingMenu) {
-            existingMenu.remove();
-          }
-          mobileFab.innerHTML = '<i class="fas fa-plus"></i>';
-          fabMenuOpen = false;
-        }
-      });
-    }
-  </script>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
-
+  <script src="/js/contact-access.js" defer></script>
 </body>
 </html>
