@@ -1,6 +1,6 @@
 importScripts("https://cdn.pushalert.co/sw-82467.js");
 
-const CACHE_VERSION = "v6";
+const CACHE_VERSION = "v8";
 const CACHE_PREFIX = "janajyoti-";
 const LEGACY_CACHE_PREFIX = "jananamuna-";
 const STATIC_CACHE = `${CACHE_PREFIX}static-${CACHE_VERSION}`;
@@ -30,6 +30,7 @@ const APP_PAGES = [
   "./html/specificgrid.html",
   "./html/Certificate.html",
   "./html/Contact.html",
+  "./contact/Contact.html",
   "./TeacherGuidebook/html/class1.html",
   "./TeacherGuidebook/html/class2.html",
   "./TeacherGuidebook/html/class3.html",
@@ -49,7 +50,7 @@ const PRECACHE_URLS = [
   "./html/StyleCertificate.css",
   "./html/ScriptCertificate.js",
   "./js/pwa.js",
-  "./js/contact-access.js",
+  "./contact/Contact.js",
   "./manifest.json",
   "./articles.json",
   "./image/logo.png",
