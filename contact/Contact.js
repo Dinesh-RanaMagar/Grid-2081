@@ -600,6 +600,12 @@ const teachers = [
     phone: "9847484902",
     password: "9847484902"
   },
+   {
+    name: "Kamal sir",
+    subject: "Teacher",
+    phone: "9846003135",
+    password: "9846003135"
+  },
   {
     name: "Kamala Belbase",
     subject: "Subject Teacher",
